@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29230.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPC_Dilacio", "TP4_Dilacio\TPC_Dilacio.csproj", "{98B5E328-F021-4196-B5BA-9D13E3959457}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{407AC823-CE14-48D7-933B-F036999719E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{5EE5A2BB-FE77-4316-8C1B-0B0F853B1995}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98B5E328-F021-4196-B5BA-9D13E3959457}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98B5E328-F021-4196-B5BA-9D13E3959457}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98B5E328-F021-4196-B5BA-9D13E3959457}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98B5E328-F021-4196-B5BA-9D13E3959457}.Release|Any CPU.Build.0 = Release|Any CPU
+		{407AC823-CE14-48D7-933B-F036999719E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{407AC823-CE14-48D7-933B-F036999719E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{407AC823-CE14-48D7-933B-F036999719E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{407AC823-CE14-48D7-933B-F036999719E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EE5A2BB-FE77-4316-8C1B-0B0F853B1995}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EE5A2BB-FE77-4316-8C1B-0B0F853B1995}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EE5A2BB-FE77-4316-8C1B-0B0F853B1995}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EE5A2BB-FE77-4316-8C1B-0B0F853B1995}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E460008-47BB-4D9B-81CD-861110372174}
+	EndGlobalSection
+EndGlobal

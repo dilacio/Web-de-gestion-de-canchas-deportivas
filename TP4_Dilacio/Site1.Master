@@ -1,0 +1,196 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="TP4_Dilacio.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="shortcut icon" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/favicon.ico">
+    <link rel="stylesheet" href="Styles.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <style>
+        .shadow {
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+        }
+
+        .btn-primary {
+            color: #007bff;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn {
+            display: inline-block;
+            font-weight: 400;
+            color: #212529;
+            text-align: center;
+            vertical-align: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }
+
+        .body {
+            margin: 0 auto;
+            padding: 0;
+            margin-top: 0 auto;
+            margin-left: 0 auto;
+            margin-right: 0 auto;
+            shape-margin: 0;
+        }
+
+        .jumbotron h2 {
+            margin: 0 auto;
+            padding: 0;
+            margin-top: 0 auto;
+            margin-left: 0 auto;
+            margin-right: 0 auto;
+            shape-margin: 0;
+        }
+
+        .container {
+            height: 100%;
+            align-content: center;
+        }
+
+        .card {
+            height: 370px;
+            margin-top: auto;
+            margin-bottom: auto;
+            width: 400px;
+            background-color: rgba(0,0,0,0.5) !important;
+        }
+
+        .social_icon span {
+            font-size: 60px;
+            margin-left: 10px;
+            color: #FFC312;
+        }
+
+            .social_icon span:hover {
+                color: white;
+                cursor: pointer;
+            }
+
+        .card-header h3 {
+            color: white;
+        }
+
+        .social_icon {
+            position: absolute;
+            right: 20px;
+            top: -45px;
+        }
+
+        .input-group-prepend span {
+            width: 50px;
+            background-color: #FFC312;
+            color: black;
+            border: 0 !important;
+        }
+
+        input:focus {
+            outline: 0 0 0 0 !important;
+            box-shadow: 0 0 0 0 !important;
+        }
+
+        .remember {
+            color: white;
+        }
+
+            .remember input {
+                width: 20px;
+                height: 20px;
+                margin-left: 15px;
+                margin-right: 5px;
+            }
+
+        .login_btn {
+            color: black;
+            background-color: #FFC312;
+            width: 100px;
+        }
+
+            .login_btn:hover {
+                color: black;
+                background-color: white;
+            }
+
+        .links {
+            color: white;
+        }
+
+            .links a {
+                margin-left: 4px;
+            }
+
+        .dropdown-toggle::after {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin-left: .255em;
+            vertical-align: .255em;
+            content: "";
+            border-top: .3em solid;
+            border-right: .3em solid transparent;
+            border-bottom: 0;
+            border-left: .3em solid transparent;
+        }
+    </style>
+</head>
+<body>
+    <form id="Estructura_General" runat="server">
+
+
+        <asp:ContentPlaceHolder ID="Cabecera" runat="server">
+            <nav class="navbar navbar-toggleable-md navbar-light bg-warning">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#">Match Point </a>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </asp:ContentPlaceHolder>
+
+        <div id="secction">
+            <section>
+                <asp:ContentPlaceHolder ID="Cuerpo" runat="server">
+                </asp:ContentPlaceHolder>
+            </section>
+        </div>
+        <br />
+        <hr />
+        <div id="footer">
+            <asp:ContentPlaceHolder ID="Pie" runat="server">
+                <div>
+                    <h5>© 2019 - Programación III</h5>
+                </div>
+            </asp:ContentPlaceHolder>
+        </div>
+
+
+    </form>
+</body>
+</html>
