@@ -13,48 +13,21 @@ namespace TP4_Dilacio {
     public partial class JugadorHome {
         
         /// <summary>
-        /// ddProvincia control.
+        /// btn_ComenzarResereva control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddProvincia;
+        protected global::System.Web.UI.WebControls.Button btn_ComenzarResereva;
         
         /// <summary>
-        /// ddCiudad control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddCiudad;
-        
-        /// <summary>
-        /// ddLocalidad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddLocalidad;
-        
-        /// <summary>
-        /// ddBarrio control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddBarrio;
-        
-        /// <summary>
-        /// gvCentros control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvCentros;
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

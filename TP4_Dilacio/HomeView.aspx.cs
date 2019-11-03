@@ -31,6 +31,8 @@ namespace TP4_Dilacio
             {
                 if(Usuario.Role.Descripcion == "Jugador")
                 {
+                    Session["User_Home"] = Usuario;
+
                     Response.Redirect("JugadorHome.aspx");
                 }
                 else

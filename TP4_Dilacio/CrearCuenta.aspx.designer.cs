@@ -13,6 +13,24 @@ namespace TP4_Dilacio {
     public partial class CrearCuenta {
         
         /// <summary>
+        /// txbNombre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txbNombre;
+        
+        /// <summary>
+        /// txbApellido control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txbApellido;
+        
+        /// <summary>
         /// txbUser control.
         /// </summary>
         /// <remarks>

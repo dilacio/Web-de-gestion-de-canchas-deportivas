@@ -17,7 +17,7 @@ namespace Negocio
 
             try
             {
-                Datos.SetearQuery("SELECT a.[ID],a.[Nombre],a.[ID_Role],r.DESCRIPCION , a.[Mail] FROM [dbo].[Usuarios] as a inner join [dbo].[ROLES] as r on a.ID_Role = r.ID where a.[Nombre] = '" + User +"'" );
+                Datos.SetearQuery("SELECT a.[ID],a.[Nombre],a.[ID_Role],r.DESCRIPCION , a.[Mail], a.apellido FROM [dbo].[Usuarios] as a inner join [dbo].[ROLES] as r on a.ID_Role = r.ID where a.[Nombre] = '" + User +"'" );
 
                 Datos.EjecutarLector();
                 Usuario Us;
@@ -31,6 +31,7 @@ namespace Negocio
                     Us.Role.ID = Datos.Lector.GetInt32(2);
                     Us.Role.Descripcion = Datos.Lector.GetString(3);
                     Us.Mail = Datos.Lector.GetString(4);
+                    Us.Apellido = Datos.Lector.GetString(5);
 
                     return Us;
                 }
@@ -51,7 +52,7 @@ namespace Negocio
 
             try
             {
-                Datos.SetearQuery("SELECT a.[ID],a.[Nombre],a.[ID_Role],r.DESCRIPCION , a.[Mail] FROM [dbo].[Usuarios] as a inner join [dbo].[ROLES] as r on a.ID_Role = r.ID where a.[Nombre] = '" + User + "' and a.[Password] = '" + Pass + "'");
+                Datos.SetearQuery("SELECT a.[ID],a.[Nombre],a.[ID_Role],r.DESCRIPCION , a.[Mail],a.Apellido FROM [dbo].[Usuarios] as a inner join [dbo].[ROLES] as r on a.ID_Role = r.ID where a.[Nombre] = '" + User + "' and a.[Password] = '" + Pass + "'");
 
                 Datos.EjecutarLector();
                 Usuario Us;
@@ -65,6 +66,7 @@ namespace Negocio
                     Us.Role.ID = Datos.Lector.GetInt32(2);
                     Us.Role.Descripcion = Datos.Lector.GetString(3);
                     Us.Mail = Datos.Lector.GetString(4);
+                    Us.Apellido = Datos.Lector.GetString(5);
 
                     return Us;
                 }
@@ -84,11 +86,12 @@ namespace Negocio
             AccesoDatos Datos = new AccesoDatos();
             try
             {
-                Datos.SetearQuery("insert into Usuarios values (@Nombre,@Pass,@IDRole,@Mail)");
+                Datos.SetearQuery("insert into Usuarios values (@Nombre,@Pass,@IDRole,@Mail,@Apellido)");
                 Datos.AgregarParametro("@Nombre", Us.Nombre.ToString());
                 Datos.AgregarParametro("@Pass", Us.Password.ToString());
                 Datos.AgregarParametro("@IDRole", Us.Role.ID.ToString());
                 Datos.AgregarParametro("@Mail", Us.Mail.ToString());
+                Datos.AgregarParametro("@Apellido", Us.Mail.ToString());
 
                 Datos.Ejecucion_Accion();
 

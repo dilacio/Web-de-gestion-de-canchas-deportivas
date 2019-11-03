@@ -45,12 +45,10 @@
     <Compile Include="Barrio.cs" />
     <Compile Include="CentroDeporte.cs" />
     <Compile Include="Ciudad.cs" />
-    <Compile Include="EstadoPago.cs" />
     <Compile Include="EstadoReserva.cs" />
     <Compile Include="Factura.cs" />
     <Compile Include="HorarioCentro.cs" />
     <Compile Include="Localidad.cs" />
-    <Compile Include="Pago.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provincia.cs" />
     <Compile Include="Reserva.cs" />

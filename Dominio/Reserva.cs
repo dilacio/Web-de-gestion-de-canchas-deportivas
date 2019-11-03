@@ -12,7 +12,6 @@ namespace Dominio
         public CentroDeporte Centro { get; set; }
         public Actividad Actividad { get; set; }
         public HorarioCentro Horario { get; set; }
-        public Pago Pago { get; set; }
         public Usuario Usuario { get; set; }
         public EstadoReserva Estado { get; set; }
     }

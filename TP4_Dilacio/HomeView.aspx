@@ -5,16 +5,12 @@
 
     <hr />
     <hr />
-
-
-    
-
         <div class="img-fluid" style="background-image: url(../../Fondo12.jpg); background-size: cover; position: absolute; top: 0; right: 0; bottom: 0; left: 0;">
             <div class="container">
                 <div class="d-flex justify-content-center h-100">
                     <div class="card">
                         <div class="card-header">
-                            <h3>Sign In</h3>
+                            <h3>Iniciar Sesion</h3>
                             <div class="d-flex justify-content-end social_icon">
                                 <span><i class="fab fa-facebook-square"></i></span>
                                 <span><i class="fab fa-google-plus-square"></i></span>
@@ -27,7 +23,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                                     </div>
-                                    <input type="text" id="txbUser"  name="txbUser" runat="server" class="form-control input-text" placeholder="username" onclick="validar();">
+                                    <input type="text" id="txbUser"  name="txbUser" runat="server" class="form-control input-text" placeholder="Nombre de usuario" onclick="validar();" >
                                     
                                 </div>
                                
@@ -35,7 +31,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-key"></i></span>
                                     </div>
-                                    <input type="password" id="txbPass" class="form-control input-text" placeholder="password" runat="server" onclick="Valida_Usuario();">
+                                    <input type="password" id="txbPass" class="form-control input-text" placeholder="Contraseña" runat="server" onclick="Valida_Usuario();" >
                                 </div>
                                 <div class="row align-items-center remember">
                                     <input type="checkbox">Recordarme
@@ -43,7 +39,7 @@
                                 </div>
                                 <div class="form-group">
                                     
-                                    <input type="submit" value="Login" class="btn float-right login_btn" runat="server" id="btnLogin" name="btnLogin" onserverclick="Valida_Usuario">
+                                    <input type="submit" value="Login" class="btn  float-right login_btn" runat="server" id="btnLogin" name="btnLogin" onserverclick="Valida_Usuario">
                                 </div>
                             </form>
                         </div>

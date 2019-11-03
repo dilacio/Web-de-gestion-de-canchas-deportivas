@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace TP4_Dilacio
 {
-    public partial class JugadorSeleccionDiaHora : System.Web.UI.Page
+    public partial class JugadorConfirmarReserva : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

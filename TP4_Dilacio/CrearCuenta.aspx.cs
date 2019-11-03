@@ -41,7 +41,7 @@ namespace TP4_Dilacio
                 usuario.Mail = txbMail.Value;
                 usuario.Password = txbPass.Value;
                 usuario.Role = new Role();
-                
+
                 usuario.Role = RolNeg.Buscar(ddRole.SelectedValue);
 
                 if(UsNeg.Guardar(usuario))

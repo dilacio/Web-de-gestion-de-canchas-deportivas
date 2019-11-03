@@ -10,6 +10,6 @@
 namespace TP4_Dilacio {
     
     
-    public partial class JugadorSeleccionDiaHora {
+    public partial class JugadorReservaSeleccion {
     }
 }
