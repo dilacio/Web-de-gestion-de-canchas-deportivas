@@ -10,31 +10,31 @@
                  <h3>Por favor seleccioná el tipo de deporte que queres realizar</h3>
              </div> 
             <div class="row">
-                    <asp:DropDownList ID="ddActividad" DataTextField="Nombre" DataValueField="Nombre" runat="server" class="btn btn-toolbar bg-warning w-100"></asp:DropDownList>
+                    <asp:DropDownList ID="ddActividad" DataTextField="Nombre" DataValueField="Nombre" runat="server" class="btn btn-toolbar bg-warning w-100 btn-raised"></asp:DropDownList>
             </div>
  
             <div class="row">
                 <hr />
                 <div class="col-3">
                       <h5 class="text-black-50">Provincia</h5>
-                        <asp:DropDownList ID="ddProvincia" DataTextField="Nombre" DataValueField="Nombre" runat="server" class="btn bg-warning w-75"></asp:DropDownList>
+                        <asp:DropDownList ID="ddProvincia" DataTextField="Nombre" DataValueField="Nombre" runat="server" class="btn bg-warning w-75 btn-raised"></asp:DropDownList>
                 </div>
                 <div class="col-3">
                       <h5 class="text-black-50">Ciudad</h5>
-                        <asp:DropDownList ID="ddCiudad" DataTextField="Nombre" DataValueField="Nombre" runat="server" class="btn btn-toolbar dropdown-toggle-split bg-warning  w-75"></asp:DropDownList>
+                        <asp:DropDownList ID="ddCiudad" DataTextField="Nombre" DataValueField="Nombre" runat="server" class="btn btn-toolbar dropdown-toggle-split bg-warning w-75 btn-raised"></asp:DropDownList>
                 </div>
                  <div class="col-3">
                       <h5 class="text-black-50">Localidad</h5>
-                        <asp:DropDownList ID="ddLocalidad" DataTextField="Nombre" DataValueField="Nombre" runat="server" class="btn btn-toolbar dropdown-toggle-split bg-warning  w-75"></asp:DropDownList>
+                        <asp:DropDownList ID="ddLocalidad" DataTextField="Nombre" DataValueField="Nombre" runat="server" class="btn btn-toolbar dropdown-toggle-split bg-warning w-75 btn-raised"></asp:DropDownList>
                 </div>
                  <div class="col-3">
                       <h5 class="text-black-50">Barrio</h5>
-                        <asp:DropDownList ID="ddBarrio" DataTextField="Nombre" DataValueField="Nombre" runat="server" class="btn btn-toolbar dropdown-toggle-split bg-warning  w-75"  ></asp:DropDownList>
+                        <asp:DropDownList ID="ddBarrio" DataTextField="Nombre" DataValueField="Nombre" runat="server" class="btn btn-toolbar dropdown-toggle-split bg-warning w-75 btn-raised"  ></asp:DropDownList>
                 </div>
                
                 <div class="row">
                     <div class="col-12">
-                        <input type="submit" value="Buscar" class="btn login_btn " style="background-color:deepskyblue; margin-top:20px;width: 1135px" runat="server"  id="btnBuscar" name="btnLogin" onserverclick="btnBuscar_ServerClick" >
+                        <input type="submit" value="Buscar" class="btn login_btn btn-raised" style="background-color:deepskyblue; margin-top:20px;width: 1135px" runat="server"  id="btnBuscar" name="btnLogin" onserverclick="btnBuscar_ServerClick" >
                     </div>
          
                     

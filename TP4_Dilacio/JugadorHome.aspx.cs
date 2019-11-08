@@ -18,7 +18,7 @@ namespace TP4_Dilacio
         }
         protected void btnIrReserva_click(object sender, EventArgs e)
         {
-            
+            Response.Redirect("JugadorVerReserva.aspx");
         }
         protected void btnIrComenzarReserva_click(object sender, EventArgs e)
         {

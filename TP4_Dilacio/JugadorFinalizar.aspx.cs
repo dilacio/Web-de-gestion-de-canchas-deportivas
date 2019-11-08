@@ -15,7 +15,7 @@ namespace TP4_Dilacio
         }
         protected void BtnConfirmar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("HomeView.aspx");
+            Response.Redirect("JugadorHome.aspx");
         }
     }
 }

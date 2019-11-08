@@ -14,13 +14,17 @@ namespace TP4_Dilacio
         public List<Role> Lista { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-           Lista = new List<Role>();
-            RoleNegocio RolNegocio = new RoleNegocio();
+            if (!IsPostBack)
+            {
+                Lista = new List<Role>();
+                RoleNegocio RolNegocio = new RoleNegocio();
 
-            Lista = RolNegocio.Listar();
+                Lista = RolNegocio.Listar();
 
-            ddRole.DataSource = Lista;
-            ddRole.DataBind();
+                ddRole.DataSource = Lista;
+                ddRole.DataBind();
+            }
+            
 
         }
 

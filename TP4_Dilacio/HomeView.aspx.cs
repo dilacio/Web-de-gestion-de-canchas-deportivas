@@ -37,7 +37,8 @@ namespace TP4_Dilacio
                 }
                 else
                 {
-                    Response.Redirect("JugadorSeleccionDiaHora.aspx");
+                    Session["User_Home"] = Usuario;
+                    Response.Redirect("ComercianteHome.aspx");
                 }
             }
             else

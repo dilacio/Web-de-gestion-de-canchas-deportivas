@@ -1,15 +1,60 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ComercianteHome.aspx.cs" Inherits="TP4_Dilacio.ComercianteHome" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ComercianteHome.aspx.cs" Inherits="TP4_Dilacio.ComercianteHome" MasterPageFile="~/Site1.Master" %>
+<asp:Content ID="ComHome" ContentPlaceHolderID ="Cuerpo" runat="server">
+ <section class="bg-inverse" id="SeleccionLugar">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                     <br /> <br />
 
-<!DOCTYPE html>
+                    <div class="card">
+                        <div class="card-header text-white">
+                            Verifica tus datos
+                        </div>
+                        <div class="card-body bg-white">
+                            <div class="row" >
+                               <p class="card-title text-black-50" style="margin-left:75px">Verifica los datos de tu comercio</p>
+                            </div>
+                            <div class="row"  >
+                                <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8jUnf9qPevu5wjmGrAzuCVSpOEJ1b5aVLWhp4x-oEaMmGxJvS&s" width="200" height="200" style="margin-left:85px"/>
+                            </div>
+                            <br /><br />
+                            <div class="row" >
+                           
+                                <asp:Button class="btn login_btn bg-warning w-auto" runat="server" style="margin-left:120px" id="btn_ABM_datos" OnClick="btn_ABM_datos_Click" Text="Verificá" />
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                     <br /> <br />
+                    <div class="card">
+                        <div class="card-header text-white">
+                            Ver Reserva
+                        </div>
+                         <div class="card-body bg-white">
+                            <div class="row" >
+                               <p class="card-title text-black-50" style="margin-left:75px">Verifica las reservas</p>
+                            </div>
+                            <div class="row"  >
+                                <img  src="https://www.lojas-na.net/WebRoot/Store/Shops/SINFIC_002E_Lojas-na-Net_002E_061004/55F9/550F/F3B8/12BE/005F/25E6/6498/42A6/icon-calendario.png" width="200" height="200" style="margin-left:85px"/>
+                            </div>
+                             <br /><br />
+      
+                            <div class="row" >
+                           
+                                <asp:Button class="btn login_btn bg-warning w-auto" runat="server"  style="margin-left:120px" id="btnIrReserva_click" OnClick="btnIrReserva_click_Click" Text="Ver reservar" />
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                </div>
+                <div class="col-4">
+                </div>
+            </div>
+
         </div>
-    </form>
-</body>
-</html>
+    </section>
+</asp:Content>

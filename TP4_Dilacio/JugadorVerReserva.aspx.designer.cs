@@ -10,24 +10,33 @@
 namespace TP4_Dilacio {
     
     
-    public partial class ComercianteHome {
+    public partial class JugadorVerReserva {
         
         /// <summary>
-        /// btn_ABM_datos control.
+        /// titulo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_ABM_datos;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl titulo;
         
         /// <summary>
-        /// btnIrReserva_click control.
+        /// txbActividad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnIrReserva_click;
+        protected global::System.Web.UI.WebControls.TextBox txbActividad;
+        
+        /// <summary>
+        /// gvReservas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox gvReservas;
     }
 }

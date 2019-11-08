@@ -13,5 +13,15 @@ namespace TP4_Dilacio
         {
 
         }
+
+        protected void btn_ABM_datos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ComercianteABMDatos.aspx");
+        }
+
+        protected void btnIrReserva_click_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

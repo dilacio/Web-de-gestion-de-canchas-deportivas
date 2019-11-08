@@ -10,8 +10,24 @@ namespace Negocio
     public class CentroNegocio
     {
         AccesoDatos Datos;
-        
-        public List<CentroDeporte> Listar_x_Filtros(string VarBarrio, string VarLocalidad, string VarCiudad, string VarPronvincia)
+
+        public CentroDeporte BuscoID(string Nombre)
+        {
+            AccesoDatos Datos = new AccesoDatos();
+            CentroDeporte Aux = new CentroDeporte();
+
+            Datos.SetearQuery("SELECT ID FROM Centros_Deportes WHERE NOMBRE = '" + Nombre + "'");
+            Datos.EjecutarLector();
+
+            if (Datos.Lector.Read())
+            {
+                Aux.ID = Datos.Lector.GetInt32(0);
+                Aux.Nombre = Nombre;
+            }
+            return Aux;
+        }
+
+            public List<CentroDeporte> Listar_x_Filtros(string VarBarrio, string VarLocalidad, string VarCiudad, string VarPronvincia)
         {
             Datos = new AccesoDatos();
             List<CentroDeporte> Lista = new List<CentroDeporte>();
@@ -100,6 +116,38 @@ namespace Negocio
                     Aux.Barrio.Localidad = new Localidad();
 
                     Aux.Barrio.Localidad.ID = Datos.Lector.GetInt32(5);
+                }
+                return Aux;
+
+            }
+            catch (Exception Ex)
+            {
+
+                throw Ex;
+            }
+
+        }
+        public CentroDeporte BuscarCentroXDueño(Usuario User)
+        {
+            Datos = new AccesoDatos();
+            CentroDeporte Aux = new CentroDeporte();
+            List<CentroDeporte> Lista = new List<CentroDeporte>();
+            try
+            {
+                Datos.SetearQuery("SELECT C.[ID],C.[NOMBRE],C.[Direccion],c.id_barrio  FROM [TP_MATCHPOINT].[dbo].[Centros_Deportes] AS C INNER JOIN CENTRO_DUEÑO AS CD ON CD.ID_CENTRO = C.ID INNER JOIN USUARIOS AS U ON U.ID = CD.ID_USER WHERE U.ID = "+ User.IDUsuario );
+                Datos.EjecutarLector();
+
+                if (Datos.Lector.Read())
+                {
+                    Aux = new CentroDeporte();
+                    Aux.ID = Datos.Lector.GetInt32(0);
+                    Aux.Nombre = Datos.Lector.GetString(1);
+                    Aux.Direccion = Datos.Lector.GetString(2);
+                    Aux.Barrio = new Barrio();
+
+                    Aux.Barrio.ID = Datos.Lector.GetInt32(3);
+
+                    Lista.Add(Aux);
                 }
                 return Aux;
 

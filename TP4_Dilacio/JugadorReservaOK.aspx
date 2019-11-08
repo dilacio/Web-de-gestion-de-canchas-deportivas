@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="JugadorReservaOK.aspx.cs" Inherits="TP4_Dilacio.JugadorReseraOK" MasterPageFile="~/Site1.Master" %>
 
+
 <asp:Content ID="ReservaOKHead" ContentPlaceHolderID="head" runat="server">
 
     <!-- Form style -->

@@ -91,7 +91,7 @@ namespace Negocio
                 Datos.AgregarParametro("@Pass", Us.Password.ToString());
                 Datos.AgregarParametro("@IDRole", Us.Role.ID.ToString());
                 Datos.AgregarParametro("@Mail", Us.Mail.ToString());
-                Datos.AgregarParametro("@Apellido", Us.Mail.ToString());
+                Datos.AgregarParametro("@Apellido", Us.Apellido.ToString());
 
                 Datos.Ejecucion_Accion();
 

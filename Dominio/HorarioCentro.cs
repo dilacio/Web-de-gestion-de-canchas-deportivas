@@ -12,6 +12,6 @@ namespace Dominio
         public CentroDeporte Centro { get; set; }
         public int HoraDesde { get; set; }
         public int HoraHasta { get; set; }
-        public decimal DuracionJuego { get; set; }
+        public double DuracionJuego { get; set; }
     }
 }
