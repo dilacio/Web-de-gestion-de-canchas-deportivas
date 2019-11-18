@@ -13,6 +13,7 @@ namespace Dominio
         public string Nombre { get; set; }
 
         public string Direccion { get; set; }
+        public Usuario Dueño { get; set; }
 
         public override string ToString()
         {

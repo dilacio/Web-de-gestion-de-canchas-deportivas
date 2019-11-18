@@ -22,6 +22,15 @@ namespace TP4_Dilacio {
         protected global::System.Web.UI.WebControls.Button btn_ABM_datos;
         
         /// <summary>
+        /// btnGestionCanchas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGestionCanchas;
+        
+        /// <summary>
         /// btnIrReserva_click control.
         /// </summary>
         /// <remarks>

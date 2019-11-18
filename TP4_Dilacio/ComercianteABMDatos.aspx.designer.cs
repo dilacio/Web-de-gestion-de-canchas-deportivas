@@ -13,42 +13,6 @@ namespace TP4_Dilacio {
     public partial class ComercianteABMDatos {
         
         /// <summary>
-        /// ddactividades control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddactividades;
-        
-        /// <summary>
-        /// btnQuitarActividad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnQuitarActividad;
-        
-        /// <summary>
-        /// ddNuevaActividad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddNuevaActividad;
-        
-        /// <summary>
-        /// btnAgregarActividad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregarActividad;
-        
-        /// <summary>
         /// txbnombre control.
         /// </summary>
         /// <remarks>

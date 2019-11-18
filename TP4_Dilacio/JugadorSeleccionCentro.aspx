@@ -17,7 +17,7 @@
                 <hr />
                 <div class="col-3">
                       <h5 class="text-black-50">Provincia</h5>
-                        <asp:DropDownList ID="ddProvincia" DataTextField="Nombre" DataValueField="Nombre" runat="server" class="btn bg-warning w-75 btn-raised"></asp:DropDownList>
+                        <asp:DropDownList ID="ddProvincia" DataTextField="Nombre" DataValueField="Nombre" runat="server" class="btn bg-warning w-75 btn-raised" OnSelectedIndexChanged="ddProvincia_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
                 </div>
                 <div class="col-3">
                       <h5 class="text-black-50">Ciudad</h5>
@@ -46,6 +46,7 @@
 
                     <h4>Seleccioná el lugar que queres</h4>
                     <asp:ListBox ID ="gvCentros" runat="server" CssClass="list-group-item list-group-item-secondary" Width ="1135px" Height="200px"  ></asp:ListBox>
+                    <asp:GridView runat="server" ID="gvcentros2"></asp:GridView>
 
                     <input type="submit" value="Seleccionar" class="float-lg-none login_btn bg-warning" runat="server" id="btnCentro" name="btnCentro" onserverclick="btnCentro_ServerClick">
                 

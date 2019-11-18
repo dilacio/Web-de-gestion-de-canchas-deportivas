@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class HorarioCentro
+    public class Cancha
     {
         public int ID { get; set; }
         public CentroDeporte Centro { get; set; }
-        public int HoraDesde { get; set; }
-        public int HoraHasta { get; set; }
-        public double DuracionJuego { get; set; }
+        public string Nombre { get; set; }
+        public Actividad Actividad  { get; set; }
+
+        public override string ToString()
+        {
+            return Nombre;
+        }
     }
 }

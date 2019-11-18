@@ -68,11 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ComercianteABMDatos.aspx" />
+    <Content Include="ComercianteGestionCanchas.aspx" />
     <Content Include="ComercianteHome.aspx" />
+    <Content Include="ComercianteVerReservas.aspx" />
     <Content Include="CrearCuenta.aspx" />
     <Content Include="HomeView.aspx" />
     <Content Include="JugadorReservaFallida.aspx" />
-    <Content Include="JugadorSeleccionHorario.aspx" />
     <Content Include="JugadorFinalizar.aspx" />
     <Content Include="JugadorHome.aspx" />
     <Content Include="JugadorReservaOK.aspx" />
@@ -89,12 +90,26 @@
     <Compile Include="ComercianteABMDatos.aspx.designer.cs">
       <DependentUpon>ComercianteABMDatos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ComercianteGestionCanchas.aspx.cs">
+      <DependentUpon>ComercianteGestionCanchas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComercianteGestionCanchas.aspx.designer.cs">
+      <DependentUpon>ComercianteGestionCanchas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ComercianteHome.aspx.cs">
       <DependentUpon>ComercianteHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ComercianteHome.aspx.designer.cs">
       <DependentUpon>ComercianteHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ComercianteVerReservas.aspx.cs">
+      <DependentUpon>ComercianteVerReservas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComercianteVerReservas.aspx.designer.cs">
+      <DependentUpon>ComercianteVerReservas.aspx</DependentUpon>
     </Compile>
     <Compile Include="CrearCuenta.aspx.cs">
       <DependentUpon>CrearCuenta.aspx</DependentUpon>
@@ -116,13 +131,6 @@
     </Compile>
     <Compile Include="JugadorReservaFallida.aspx.designer.cs">
       <DependentUpon>JugadorReservaFallida.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="JugadorSeleccionHorario.aspx.cs">
-      <DependentUpon>JugadorSeleccionHorario.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="JugadorSeleccionHorario.aspx.designer.cs">
-      <DependentUpon>JugadorSeleccionHorario.aspx</DependentUpon>
     </Compile>
     <Compile Include="JugadorFinalizar.aspx.cs">
       <DependentUpon>JugadorFinalizar.aspx</DependentUpon>

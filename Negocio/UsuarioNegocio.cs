@@ -18,8 +18,8 @@ namespace Negocio
             try
             {
                 Datos.SetearQuery("SELECT a.[ID],a.[Nombre],a.[ID_Role],r.DESCRIPCION , a.[Mail], a.apellido FROM [dbo].[Usuarios] as a inner join [dbo].[ROLES] as r on a.ID_Role = r.ID where a.[Nombre] = '" + User +"'" );
-
                 Datos.EjecutarLector();
+
                 Usuario Us;
 
                 while (Datos.Lector.Read())

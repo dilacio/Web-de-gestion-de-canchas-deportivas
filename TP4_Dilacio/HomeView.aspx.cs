@@ -13,23 +13,51 @@ namespace TP4_Dilacio
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-
         }
-        protected void Valida_Usuario(object sender, EventArgs e)
+        //protected void Valida_Usuario(object sender, EventArgs e)
+        //{
+        //    string User = txbUser.Value;
+        //    string Pass = txbPass.Value;
+
+        //    UsuarioNegocio UsNeg = new UsuarioNegocio();
+        //    Usuario Usuario = new Usuario();
+
+        //    Usuario= UsNeg.Valida_Credenciales(User,Pass);
+
+        //    if(Usuario !=  null)
+        //    {
+        //        if(Usuario.Role.Descripcion == "Jugador")
+        //        {
+        //            Session["User_Home"] = Usuario;
+
+        //            Response.Redirect("JugadorHome.aspx");
+        //        }
+        //        else
+        //        {
+        //            Session["User_Home"] = Usuario;
+        //            Response.Redirect("ComercianteHome.aspx");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Response.Write("<script>alert('Usuario Incorrecto, por favor ingrese nuevamente sus credenciales');</script>");
+        //    }
+       // }
+
+
+        protected void btnLogin_ServerClick1(object sender, EventArgs e)
         {
             string User = txbUser.Value;
             string Pass = txbPass.Value;
 
-
             UsuarioNegocio UsNeg = new UsuarioNegocio();
             Usuario Usuario = new Usuario();
 
-            Usuario= UsNeg.Valida_Credenciales(User,Pass);
+            Usuario = UsNeg.Valida_Credenciales(User, Pass);
 
-            if(Usuario !=  null)
+            if (Usuario != null)
             {
-                if(Usuario.Role.Descripcion == "Jugador")
+                if (Usuario.Role.Descripcion == "Jugador")
                 {
                     Session["User_Home"] = Usuario;
 
@@ -45,8 +73,6 @@ namespace TP4_Dilacio
             {
                 Response.Write("<script>alert('Usuario Incorrecto, por favor ingrese nuevamente sus credenciales');</script>");
             }
-            
         }
-  
     }
 }

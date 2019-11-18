@@ -7,46 +7,30 @@ using System.Web.UI.WebControls;
 using Dominio;
 using Negocio;
 
-
 namespace TP4_Dilacio
 {
-    public partial class JugadorVerReserva : System.Web.UI.Page
+    public partial class ComercianteVerReservas : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             Carga_datos();
-
         }
         void Carga_datos()
         {
             ReservaNegocio ResNeg = new ReservaNegocio();
             List<Reserva> Lista = new List<Reserva>();
             Usuario Usuario = new Usuario();
+            CentroDeporte Centro = new CentroDeporte();
+            CentroNegocio CenNeg = new CentroNegocio();
 
             Usuario = (Usuario)Session["User_Home"];
+            Centro = CenNeg.BuscarCentroXDueño(Usuario);
 
-            Lista = ResNeg.ListarPorUsuario(Usuario);
+            Lista = ResNeg.ListarPorCentro(Centro);
 
 
             gvReservasHechas.DataSource = Lista;
             gvReservasHechas.DataBind();
-        }
-        protected void gvReservasHechas_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-            ReservaNegocio ResNeg = new ReservaNegocio();
-
-            int IDReserva;
-
-            IDReserva = Convert.ToInt32(gvReservasHechas.Rows[e.RowIndex].Cells[1].Text);
-
-            if(ResNeg.BajaReserva(IDReserva))
-            {
-
-                Response.Write("<script>alert('Reserva dada de baja correctamente');</script>");
-                Carga_datos();
-
-
-            }
         }
     }
 }

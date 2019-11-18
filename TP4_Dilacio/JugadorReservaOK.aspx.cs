@@ -16,56 +16,34 @@ namespace TP4_Dilacio
             Usuario Usuario = new Usuario();
             string Centro_seleccionado;
             string Actividad_seleccionada;
+            Reserva Reserva = new Reserva();
+
+            Reserva = (Reserva)Session["Reserva_Final"];
            
             Usuario = (Usuario)(Session["User_Home"]);
             Centro_seleccionado = (string)(Session["Centro_Seleccionado"]);
             Actividad_seleccionada = (string)(Session["Deporte_Seleccionado"]);
            
-
-            txbnombre.Text = Usuario.Nombre;
+  
+            txbnombre.Text = Reserva.Usuario.Nombre;
             txbCentro.Text = Centro_seleccionado;
-            txbape.Text = Usuario.Apellido;
-            txbemail.Text = Usuario.Mail;
-            txbActividad.Text = Actividad_seleccionada;
-
+            txbape.Text = Reserva.Usuario.Apellido;
+            txbemail.Text = Reserva.Usuario.Mail;
+            txbActividad.Text = Reserva.Actividad.Nombre;
+            txbFechaJuego.Value = Reserva.Fecha.ToString("dd/MM/yyyy");
+            TxbDesde.Text = Reserva.HoraDesde.ToString();
+            txbHasta.Value = Reserva.HoraHasta.ToString();
+            
 
         }
         protected void BtnConfirmar_Click(object sender, EventArgs e)
         {
-            Usuario Usuario = new Usuario();
             Reserva Reserva = new Reserva();
             ReservaNegocio ResNeg = new ReservaNegocio();
 
-            string Centro_seleccionado;
-            string Actividad_seleccionada;
-
-            Usuario = (Usuario)(Session["User_Home"]);
-            Centro_seleccionado = (string)(Session["Centro_Seleccionado"]);
-            Actividad_seleccionada = (string)(Session["Deporte_Seleccionado"]);
-
-            CentroDeporte Centro = new CentroDeporte();
-            CentroNegocio cenNeg = new CentroNegocio();
-            Actividad Act = new Actividad();
-            ActividadNegocio ActNeg = new ActividadNegocio();
-
-            Act = ActNeg.BuscarActividad(Actividad_seleccionada);
-            Centro = cenNeg.BuscarCentro(Centro_seleccionado);
-
-            Reserva.Actividad = new Actividad();
-            Reserva.Actividad = Act;
-
-            Reserva.Centro = new CentroDeporte();
-            Reserva.Centro = Centro;
-
-            Reserva.Estado = new EstadoReserva();
-            Reserva.Estado.ID = 1 ;
-
-            Reserva.Horario = new HorarioCentro();
-            Reserva.Horario.ID = 1;
-
-            Reserva.Usuario = Usuario;
-
-            if (ResNeg.Reservar(Reserva))
+            Reserva = (Reserva)Session["Reserva_Final"];
+            
+            if(ResNeg.Guardar(Reserva))
             {
                 Response.Redirect("JugadorFinalizar.aspx");
             }
@@ -73,7 +51,9 @@ namespace TP4_Dilacio
             {
                 Response.Redirect("JugadorReservaFallida.aspx");
             }
+
         }
+
        
     }
 }

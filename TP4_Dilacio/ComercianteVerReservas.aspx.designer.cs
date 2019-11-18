@@ -10,7 +10,7 @@
 namespace TP4_Dilacio {
     
     
-    public partial class JugadorVerReserva {
+    public partial class ComercianteVerReservas {
         
         /// <summary>
         /// titulo control.

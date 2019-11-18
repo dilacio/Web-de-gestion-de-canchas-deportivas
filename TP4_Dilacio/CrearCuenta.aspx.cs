@@ -24,9 +24,7 @@ namespace TP4_Dilacio
                 ddRole.DataSource = Lista;
                 ddRole.DataBind();
             }
-            
-
-        }
+         }
 
         protected void btnLogin_ServerClick(object sender, EventArgs e)
         {
@@ -42,6 +40,7 @@ namespace TP4_Dilacio
                 usuario = new Usuario();
 
                 usuario.Nombre = txbUser.Value;
+                usuario.Apellido = txbApellido.Value;
                 usuario.Mail = txbMail.Value;
                 usuario.Password = txbPass.Value;
                 usuario.Role = new Role();

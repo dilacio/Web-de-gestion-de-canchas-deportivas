@@ -34,14 +34,17 @@ namespace TP4_Dilacio
             ddProvincia.DataSource = ProvNeg.Listar();
             ddProvincia.DataBind();
 
-            ddCiudad.DataSource = CiuNeg.Listar();
+
+            ddCiudad.DataSource = CiuNeg.BuscarPorProvincia(ddProvincia.SelectedValue);
             ddCiudad.DataBind();
 
-            ddLocalidad.DataSource = LocNeg.Listar();
+            ddLocalidad.DataSource = LocNeg.Listar(ddCiudad.SelectedValue);
             ddLocalidad.DataBind();
 
             ddBarrio.DataSource = BarNeg.Listar();
             ddBarrio.DataBind();
+
+            
 
         }
 
@@ -54,6 +57,10 @@ namespace TP4_Dilacio
 
             gvCentros.DataSource = Lista;
             gvCentros.DataBind();
+
+            gvcentros2.DataSource = Lista;
+            gvcentros2.DataBind();
+
         }
 
         protected void btnCentro_ServerClick(object sender, EventArgs e)
@@ -65,7 +72,7 @@ namespace TP4_Dilacio
                 Session["Centro_Seleccionado"] = gvCentros.SelectedValue;
                 Session["Deporte_Seleccionado"] = ddActividad.SelectedValue;
                 Usuario = (Usuario)(Session["User_Home"]);
-                Response.Redirect("JugadorReservaOK.aspx");
+                Response.Redirect("JugadorReservaSeleccion.aspx");
             }
             else
             {
@@ -73,6 +80,14 @@ namespace TP4_Dilacio
             }
 
             
+        }
+
+        protected void ddProvincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CiudadNegocio CiuNeg = new CiudadNegocio();
+
+            ddCiudad.DataSource = CiuNeg.BuscarPorProvincia(ddProvincia.SelectedValue);
+
         }
     }
 }

@@ -51,7 +51,18 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label class="label">Fecha de juego</label>
-                                        <input type="text" class='datepicker' name="ingreso" id="ingreso" />
+                                        <input type="text" class='datepicker' name="ingreso" id="txbFechaJuego"  runat="server"/>
+                                    </div>
+                                </div>
+                                 <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="label">Hora de Inicio</label>
+                                        <asp:TextBox runat="server" ID="TxbDesde" Text="" Enabled="false"></asp:TextBox>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="label">Hora de Fin</label>
+                                        <input type="text" class='datepicker' name="ingreso" id="txbHasta"  runat="server"/>
                                     </div>
                                 </div>
 
@@ -61,6 +72,7 @@
                                         <label class="label">Centro deportivo</label>
                                         <asp:TextBox runat="server" ID="txbCentro" Enabled="false"></asp:TextBox>
                                     </div>
+
                                 </div>
 
                                 <div class="row">

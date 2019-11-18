@@ -10,6 +10,23 @@ namespace Negocio
     public class CentroNegocio
     {
         AccesoDatos Datos;
+        public bool Actualizar(CentroDeporte Centro)
+        {
+            try
+            {
+                AccesoDatos Datos = new AccesoDatos();
+
+                Datos.SetearQuery("UPDATE CENTROS_DEPORTES SET NOMBRE = '"+Centro.Nombre+"',DIRECCION = '"+Centro.Direccion+"' WHERE ID = "+Centro.ID);
+                Datos.Ejecucion_Accion();
+
+                return true;
+            }
+            catch (Exception Ex)
+            {
+
+                throw Ex;
+            }
+        }
 
         public CentroDeporte BuscoID(string Nombre)
         {
@@ -134,7 +151,7 @@ namespace Negocio
             List<CentroDeporte> Lista = new List<CentroDeporte>();
             try
             {
-                Datos.SetearQuery("SELECT C.[ID],C.[NOMBRE],C.[Direccion],c.id_barrio  FROM [TP_MATCHPOINT].[dbo].[Centros_Deportes] AS C INNER JOIN CENTRO_DUEÑO AS CD ON CD.ID_CENTRO = C.ID INNER JOIN USUARIOS AS U ON U.ID = CD.ID_USER WHERE U.ID = "+ User.IDUsuario );
+                Datos.SetearQuery("SELECT C.[ID],C.[NOMBRE],C.[Direccion],c.id_barrio  FROM [TP_MATCHPOINT].[dbo].[Centros_Deportes] AS C INNER JOIN usuarios as u on u.id = c.ID_DUEÑO WHERE U.ID  = " + User.IDUsuario );
                 Datos.EjecutarLector();
 
                 if (Datos.Lector.Read())

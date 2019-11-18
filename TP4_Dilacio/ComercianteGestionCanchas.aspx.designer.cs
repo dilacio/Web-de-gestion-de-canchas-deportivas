@@ -10,87 +10,105 @@
 namespace TP4_Dilacio {
     
     
-    public partial class JugadorReseraOK {
+    public partial class ComercianteGestionCanchas {
         
         /// <summary>
-        /// txbActividad control.
+        /// ddCanchas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbActividad;
+        protected global::System.Web.UI.WebControls.DropDownList ddCanchas;
         
         /// <summary>
-        /// txbnombre control.
+        /// txbHoraDesde control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbnombre;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txbHoraDesde;
         
         /// <summary>
-        /// txbape control.
+        /// txbHoraHasta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbape;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txbHoraHasta;
         
         /// <summary>
-        /// txbemail control.
+        /// txbDuracion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbemail;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txbDuracion;
         
         /// <summary>
-        /// txbFechaJuego control.
+        /// btnActualizar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txbFechaJuego;
+        protected global::System.Web.UI.WebControls.Button btnActualizar;
         
         /// <summary>
-        /// TxbDesde control.
+        /// txbNombreAgregar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxbDesde;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txbNombreAgregar;
         
         /// <summary>
-        /// txbHasta control.
+        /// ddActividades control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txbHasta;
+        protected global::System.Web.UI.WebControls.DropDownList ddActividades;
         
         /// <summary>
-        /// txbCentro control.
+        /// txbDesdeAgregar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbCentro;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txbDesdeAgregar;
         
         /// <summary>
-        /// btnConfirmar control.
+        /// txbHastaAgregar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnConfirmar;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txbHastaAgregar;
+        
+        /// <summary>
+        /// txbDuracionAgregar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txbDuracionAgregar;
+        
+        /// <summary>
+        /// btnAgregar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAgregar;
     }
 }
