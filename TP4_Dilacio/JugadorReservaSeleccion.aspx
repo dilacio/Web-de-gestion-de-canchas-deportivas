@@ -18,10 +18,26 @@
 </head>
 <body>
     <form id="Form1" runat="server">
+        <nav class="navbar navbar-toggleable-md navbar-light bg-warning mt-0">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">Match Point </a>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="HomeView.aspx">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
         <div class="row">
-            <div class="col-md-12">
-                <asp:DropDownList runat="server" ID="ddCanchas" Width="650px" CssClass="adam-button" Style="background-color: firebrick" AutoPostBack="true"></asp:DropDownList>
-            <hr />
+            <div class="col-md-12" >
+                <br />
+                <h4 style="margin-left: 500px">Podes elegir la cancha que queres jugar</h4>
+                <asp:DropDownList runat="server" ID="ddCanchas" Width="950px" CssClass="adam-button" Style="background-color: firebrick; margin-left: 220px" AutoPostBack="true" OnSelectedIndexChanged="ddCanchas_SelectedIndexChanged" ></asp:DropDownList>
+                <hr />
             </div>
         </div>
         <div class="row">
@@ -46,12 +62,13 @@
                 <asp:Button CssClass="adam-button" runat="server" Text="Adelante" ID="btnAdelante" OnClick="btnAdelante_Click" />
             </div>
             <div class="col-5">
-                <asp:GridView runat="server" ID="lbHorarios_Disponibles" CssClass="table" OnSelectedIndexChanged="lbHorarios_Disponibles_SelectedIndexChanged"  AutoGenerateSelectButton="true" >
-   
+                <asp:GridView runat="server" ID="lbHorarios_Disponibles" CssClass="table" OnSelectedIndexChanged="lbHorarios_Disponibles_SelectedIndexChanged" AutoGenerateSelectButton="true">
                 </asp:GridView>
             </div>
         </div>
-
+        <div>
+            <h5>© 2019 - Programación III</h5>
+        </div>
     </form>
 
     <script>

@@ -151,6 +151,11 @@ namespace TP4_Dilacio
                 {
                     Response.Write("<script>alert('Datos Actualizados correctamente);</script>");
                 }
+               else
+                {
+                    Response.Write("<script>alert('Eror al actualizar');</script>");
+                    
+                }
 
             }
             catch (Exception Ex)

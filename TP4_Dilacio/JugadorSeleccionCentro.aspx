@@ -17,19 +17,27 @@
                 <hr />
                 <div class="col-3">
                       <h5 class="text-black-50">Provincia</h5>
-                        <asp:DropDownList ID="ddProvincia" DataTextField="Nombre" DataValueField="Nombre" runat="server" class="btn bg-warning w-75 btn-raised" OnSelectedIndexChanged="ddProvincia_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                        <asp:DropDownList ID="ddProvincia" DataTextField="Nombre" AppendDataBoundItems="true" DataValueField="Nombre" runat="server" class="btn bg-warning w-75 btn-raised" OnSelectedIndexChanged="ddProvincia_SelectedIndexChanged" AutoPostBack="true">
+                            <asp:ListItem >Provincias</asp:ListItem>
+                        </asp:DropDownList>
                 </div>
                 <div class="col-3">
                       <h5 class="text-black-50">Ciudad</h5>
-                        <asp:DropDownList ID="ddCiudad" DataTextField="Nombre" DataValueField="Nombre" runat="server" class="btn btn-toolbar dropdown-toggle-split bg-warning w-75 btn-raised"></asp:DropDownList>
+                        <asp:DropDownList ID="ddCiudad" DataTextField="Nombre" AppendDataBoundItems="true" DataValueField="Nombre" runat="server" OnSelectedIndexChanged="ddCiudad_SelectedIndexChanged" class="btn btn-toolbar dropdown-toggle-split bg-warning w-75 btn-raised" AutoPostBack="true">
+                             <asp:ListItem >Ciudades</asp:ListItem>
+                        </asp:DropDownList>
                 </div>
                  <div class="col-3">
                       <h5 class="text-black-50">Localidad</h5>
-                        <asp:DropDownList ID="ddLocalidad" DataTextField="Nombre" DataValueField="Nombre" runat="server" class="btn btn-toolbar dropdown-toggle-split bg-warning w-75 btn-raised"></asp:DropDownList>
+                        <asp:DropDownList ID="ddLocalidad" DataTextField="Nombre" AppendDataBoundItems="true" DataValueField="Nombre" runat="server" OnSelectedIndexChanged="ddLocalidad_SelectedIndexChanged" class="btn btn-toolbar dropdown-toggle-split bg-warning w-75 btn-raised" AutoPostBack="true">
+                            <asp:ListItem >Localidades</asp:ListItem>
+                        </asp:DropDownList>
                 </div>
                  <div class="col-3">
                       <h5 class="text-black-50">Barrio</h5>
-                        <asp:DropDownList ID="ddBarrio" DataTextField="Nombre" DataValueField="Nombre" runat="server" class="btn btn-toolbar dropdown-toggle-split bg-warning w-75 btn-raised"  ></asp:DropDownList>
+                        <asp:DropDownList ID="ddBarrio" DataTextField="Nombre" DataValueField="Nombre" AppendDataBoundItems="true" runat="server" class="btn btn-toolbar dropdown-toggle-split bg-warning w-75 btn-raised"  >
+                            <asp:ListItem >Barrios</asp:ListItem>
+                        </asp:DropDownList>
                 </div>
                
                 <div class="row">
@@ -46,7 +54,7 @@
 
                     <h4>Seleccioná el lugar que queres</h4>
                     <asp:ListBox ID ="gvCentros" runat="server" CssClass="list-group-item list-group-item-secondary" Width ="1135px" Height="200px"  ></asp:ListBox>
-                    <asp:GridView runat="server" ID="gvcentros2"></asp:GridView>
+                   
 
                     <input type="submit" value="Seleccionar" class="float-lg-none login_btn bg-warning" runat="server" id="btnCentro" name="btnCentro" onserverclick="btnCentro_ServerClick">
                 

@@ -20,7 +20,7 @@
     <hr />
     <hr />
         <form runat="server">
-        <div class="img-fluid" style="background-image: url(../../Fondo12.jpg); background-size: cover; position: absolute; top: 0; right: 0; bottom: 0; left: 0;">
+        <div class="img-fluid" style="background-image: url(../../Fondo11.jpg); background-size: cover; position: absolute; top: 0; right: 0; bottom: 0; left: 0;">
             
             <div class="container">
                 <div class="d-flex justify-content-center h-100">
@@ -62,9 +62,6 @@
                         <div class="card-footer">
                             <div class="d-flex justify-content-center links">
                                 No tienes cuenta?<a href="CrearCuenta.aspx">Crear Cuenta</a>
-                            </div>
-                            <div class="d-flex justify-content-center">
-                                <a href="#">Perdiste tu contraseña?</a>
                             </div>
                         </div>
                     </div>

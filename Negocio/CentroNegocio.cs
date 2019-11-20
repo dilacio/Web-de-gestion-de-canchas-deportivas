@@ -27,7 +27,6 @@ namespace Negocio
                 throw Ex;
             }
         }
-
         public CentroDeporte BuscoID(string Nombre)
         {
             AccesoDatos Datos = new AccesoDatos();
@@ -43,15 +42,14 @@ namespace Negocio
             }
             return Aux;
         }
-
-            public List<CentroDeporte> Listar_x_Filtros(string VarBarrio, string VarLocalidad, string VarCiudad, string VarPronvincia)
+        public List<CentroDeporte> Listar_x_Filtros(string VarBarrio, string VarLocalidad, string VarCiudad, string VarPronvincia, string VarActividad)
         {
             Datos = new AccesoDatos();
             List<CentroDeporte> Lista = new List<CentroDeporte>();
 
             try
             {
-                Datos.SetearQuery("select a.[ID],a.[NOMBRE],a.[ID_BARRIO],a.[Direccion] , B.NOMBRE from Centros_Deportes as a join barrios as b on a.ID_BARRIO = b.ID join LOCALIDADES as c on c.ID = b.ID_Localidad join Ciudades as d on d.ID = c.ID_CIUDAD join PROVINCIAS as e on e.ID = d.ID_PROVINCIA where b.Nombre = '" + VarBarrio + "' and c.NOMBRE = '" + VarLocalidad + "' and d.NOMBRE = '"+ VarCiudad + "' and e.NOMBRE = '"+ VarPronvincia + "' ");
+                Datos.SetearQuery("select distinct a.[ID],a.[NOMBRE],a.[ID_BARRIO],a.[Direccion] , B.NOMBRE from Centros_Deportes as a join barrios as b on a.ID_BARRIO = b.ID join LOCALIDADES as c on c.ID = b.ID_Localidad join Ciudades as d on d.ID = c.ID_CIUDAD join PROVINCIAS as e on e.ID = d.ID_PROVINCIA join canchas as can on can.ID_Centro = a.ID join Actividades as act on act.ID = can.ID_Actividad where b.Nombre = '" + VarBarrio + "' and c.NOMBRE = '" + VarLocalidad + "' and d.NOMBRE = '"+ VarCiudad + "' and e.NOMBRE = '"+ VarPronvincia + "' and act.Nombre = '"+VarActividad+"'");
                 Datos.EjecutarLector();
 
                 while (Datos.Lector.Read())
@@ -77,7 +75,6 @@ namespace Negocio
                 throw Ex;
             }
         }
-
         public List<CentroDeporte> Listar_x_Barrio ( string Barrio)
         {
             Datos = new AccesoDatos();

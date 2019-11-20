@@ -5,6 +5,7 @@
     <!-- Form style -->
     <link rel="stylesheet" href="css/formstyle.css" type="text/css" />
 
+ 
 </asp:Content>
 
 <asp:Content ID="Comer_ABM" ContentPlaceHolderID="Cuerpo" runat="server">
@@ -50,7 +51,7 @@
 
                                     <div class="col-md-6">
                                         <label class="label">Correo electrónico</label>
-                                        <asp:TextBox runat="server" ID="txbMail" required="true"></asp:TextBox>
+                                        <asp:TextBox runat="server"  ID="txbMail" required="true" ReadOnly="true"></asp:TextBox>
 
                                     </div>
                                 </div>
@@ -59,14 +60,12 @@
                                         <input type="button" class="adam-button" onclick="history.back()" name="volver atrás" value="volver atrás">
                                     </div>
                                     <div class="col-md-6 align-content-md-center">
-                                        <asp:Button class="adam-button" runat="server" ID="btnConfirmar" Text="Confirmar" OnClick="btnConfirmar_Click" />
+                                        <asp:Button class="adam-button" runat="server" ID="btnConfirmar" Text="Confirmar" pattern=".+@foo.com" OnClick="btnConfirmar_Click" />
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
-
-
                 </article>
                 <div class="clearfix"></div>
             </div>

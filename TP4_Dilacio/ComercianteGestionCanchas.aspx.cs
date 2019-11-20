@@ -116,7 +116,11 @@ namespace TP4_Dilacio
 
             if(HorNeg.Actualizar(Horario))
             {
-                Response.Write("<script>alert('Usuario dado de alta correctamente, por favor inicie sesion');</script>");
+                Response.Write("<script>alert('Datos Modificados Correctamente');</script>");
+            }
+            else
+            {
+                Response.Write("<script>alert('Error al actualizar');</script>");
             }
 
         }

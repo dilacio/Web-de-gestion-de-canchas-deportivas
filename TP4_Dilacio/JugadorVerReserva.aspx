@@ -28,7 +28,6 @@
                         <asp:BoundField HeaderText="Desde las"  DataField="HoraDesde"  />
                         <asp:BoundField HeaderText="Hasta las"  DataField="HoraHasta"  />
                         <asp:BoundField HeaderText="Deporte"  DataField="Actividad.Nombre"/>
-
                     </Columns>
                 </asp:GridView>
                 

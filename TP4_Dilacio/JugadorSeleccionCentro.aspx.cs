@@ -17,9 +17,7 @@ namespace TP4_Dilacio
             {
                 Carga_Datos();
             }
-
         }
-
         protected void Carga_Datos()
         {
             ProvinciaNegocio ProvNeg = new ProvinciaNegocio();
@@ -34,7 +32,6 @@ namespace TP4_Dilacio
             ddProvincia.DataSource = ProvNeg.Listar();
             ddProvincia.DataBind();
 
-
             ddCiudad.DataSource = CiuNeg.BuscarPorProvincia(ddProvincia.SelectedValue);
             ddCiudad.DataBind();
 
@@ -43,9 +40,6 @@ namespace TP4_Dilacio
 
             ddBarrio.DataSource = BarNeg.Listar();
             ddBarrio.DataBind();
-
-            
-
         }
 
         protected void btnBuscar_ServerClick(object sender, EventArgs e)
@@ -53,14 +47,10 @@ namespace TP4_Dilacio
             List<CentroDeporte> Lista = new List<CentroDeporte>();
             CentroNegocio CenNeg = new CentroNegocio();
 
-            Lista = CenNeg.Listar_x_Filtros(ddBarrio.SelectedValue, ddLocalidad.SelectedValue, ddCiudad.SelectedValue, ddProvincia.SelectedValue);
+            Lista = CenNeg.Listar_x_Filtros(ddBarrio.SelectedValue, ddLocalidad.SelectedValue, ddCiudad.SelectedValue, ddProvincia.SelectedValue,ddActividad.SelectedValue);
 
             gvCentros.DataSource = Lista;
             gvCentros.DataBind();
-
-            gvcentros2.DataSource = Lista;
-            gvcentros2.DataBind();
-
         }
 
         protected void btnCentro_ServerClick(object sender, EventArgs e)
@@ -77,17 +67,48 @@ namespace TP4_Dilacio
             else
             {
                 Response.Write("<script>alert('Debe seleccionar un centro para continuar);</script>");
-            }
-
-            
+            }            
         }
 
         protected void ddProvincia_SelectedIndexChanged(object sender, EventArgs e)
         {
             CiudadNegocio CiuNeg = new CiudadNegocio();
+            LocalidadNegocio LocNeg = new LocalidadNegocio();
+            BarrioNegocio BarNeg = new BarrioNegocio();
 
+            ddCiudad.Items.Clear();
             ddCiudad.DataSource = CiuNeg.BuscarPorProvincia(ddProvincia.SelectedValue);
+            ddCiudad.DataBind();
 
+            ddLocalidad.Items.Clear();
+            ddLocalidad.DataSource = LocNeg.BuscarPorProvincia(ddProvincia.SelectedValue);
+            ddLocalidad.DataBind();
+
+            ddBarrio.Items.Clear();
+            ddBarrio.DataSource = BarNeg.BuscarPorProvincia(ddProvincia.SelectedValue);
+            ddBarrio.DataBind();
+        }
+        protected void ddCiudad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LocalidadNegocio LocNeg = new LocalidadNegocio();
+            BarrioNegocio BarNeg = new BarrioNegocio();
+
+            ddLocalidad.Items.Clear();
+            ddLocalidad.DataSource = LocNeg.BuscarPorCiudad(ddCiudad.SelectedValue);
+            ddLocalidad.DataBind();
+
+            ddBarrio.Items.Clear();
+            ddBarrio.DataSource = BarNeg.BuscarPorCiudad(ddCiudad.SelectedValue);
+            ddBarrio.DataBind();
+        }
+
+        protected void ddLocalidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BarrioNegocio BarNeg = new BarrioNegocio();
+
+            ddBarrio.Items.Clear();
+            ddBarrio.DataSource = BarNeg.BuscarPorLocalidad(ddLocalidad.SelectedValue);
+            ddBarrio.DataBind();
         }
     }
 }
