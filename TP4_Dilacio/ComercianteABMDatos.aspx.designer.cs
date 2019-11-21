@@ -31,6 +31,15 @@ namespace TP4_Dilacio {
         protected global::System.Web.UI.WebControls.TextBox txbape;
         
         /// <summary>
+        /// txbUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txbUser;
+        
+        /// <summary>
         /// txbCentroNombre control.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,15 @@ namespace TP4_Dilacio {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txbMail;
+        
+        /// <summary>
+        /// btnVolver control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVolver;
         
         /// <summary>
         /// btnConfirmar control.

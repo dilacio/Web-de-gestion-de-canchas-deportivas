@@ -78,6 +78,9 @@ namespace TP4_Dilacio
 
                 if (CanNeg.Guardar(Can))
                 {
+                    Cancha Aux = new Cancha();
+                    Aux = CanNeg.Buscar(Can.Nombre, Can.Centro.ID);
+                    Horario.Cancha.ID = Aux.ID;
                     if(HorNeg.Guardar(Horario))
                     {
                         CargoDDList();
@@ -149,6 +152,11 @@ namespace TP4_Dilacio
         {
             Limpio_vista();
             Actualizo_dd();  
+        }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ComercianteHome.aspx");
         }
     }
 }

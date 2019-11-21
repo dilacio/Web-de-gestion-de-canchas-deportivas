@@ -32,6 +32,7 @@ namespace TP4_Dilacio
             txbnombre.Text = Usuario.Nombre;
             txbMail.Text = Usuario.Mail;
             txbape.Text = Usuario.Apellido;
+            txbUser.Text = Usuario.NombreUsuario;
             txbDireccion.Text = Centro.Direccion;
             txbCentroNombre.Text = Centro.Nombre;
 
@@ -43,96 +44,9 @@ namespace TP4_Dilacio
             
             CanchaNegocio CanNeg = new CanchaNegocio();
 
-
-
-            //
-
-            //if(ListaCancha.Count() > 0)
-            //{
-            //    ddActGestion.DataSource = ListaCancha;
-            //    ddActGestion.DataBind();
-            //}
-            //else
-            //{
-            //    ddActGestion.Text = "No tenés canchas";
-
-            //}
-        
-
-            //Lista_ActPorCentro = ActNeg.BuscarPorCentro(Centro.Nombre);
-            //ListaActTodas = ActNeg.Listar();
-
-            //List<Actividad> ListaAgregarAct = new List<Actividad>();
-            //ddactividades.DataSource = Lista_ActPorCentro;
-            //ddactividades.DataBind();
-
-            //for (int i=0;i<ListaActTodas.Count();i++)
-            //{
-            //    int Cont = 0;
-            //    for (int e=0;e<Lista_ActPorCentro.Count();e++)
-            //    {
-            //        if (Lista_ActPorCentro[e].Nombre == ListaActTodas[i].Nombre)
-            //        {
-            //            Cont++;
-            //        }  
-            //    }
-            //    if(Cont==0)
-            //    {
-            //        ListaAgregarAct.Add(ListaActTodas[i]);
-            //    }
-            //}
-            //ddNuevaActividad.DataSource = ListaAgregarAct;
-            //ddNuevaActividad.DataBind();
         }
 
-        //protected void btnAgregarActividad_Click(object sender, EventArgs e)
-        //{
-        //    Actividad Act = new Actividad();
-        //    ActividadNegocio ActNeg = new ActividadNegocio();
-
-        //    CentroDeporte Centro = new CentroDeporte();
-        //    CentroNegocio CenNeg = new CentroNegocio();
-
-            
-
-        //    try
-        //    {
-        //        Act = ActNeg.BuscoID(ddNuevaActividad.SelectedValue);
-        //        Centro = CenNeg.BuscoID(txbCentroNombre.Text);
-        //        ActNeg.AgregarActividadACentro(Act.ID, Centro.ID);
-
-        //        Cargo_ddList();
-        //    }
-        //    catch (Exception Ex)
-        //    {
-
-        //        throw Ex;
-        //    }
-        //}
-
-        //protected void btnQuitarActividad_Click(object sender, EventArgs e)
-        //{
-        //    Actividad Act = new Actividad();
-        //    ActividadNegocio ActNeg = new ActividadNegocio();
-
-        //    CentroDeporte Centro = new CentroDeporte();
-        //    CentroNegocio CenNeg = new CentroNegocio();
-
-        //    try
-        //    {
-        //        Act = ActNeg.BuscoID(ddactividades.SelectedValue);
-        //        Centro = CenNeg.BuscoID(txbCentroNombre.Text);
-        //        ActNeg.QuitarActividadACentro(Act.ID, Centro.ID);
-
-        //        Cargo_ddList();
-        //    }
-        //    catch (Exception Ex)
-        //    {
-
-        //        throw Ex;
-        //    }
-        //}
-
+        
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
             CentroDeporte Centro_Nuevo = new CentroDeporte();
@@ -163,6 +77,11 @@ namespace TP4_Dilacio
 
                 throw Ex;
             }
+        }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ComercianteHome.aspx");
         }
     }
 }

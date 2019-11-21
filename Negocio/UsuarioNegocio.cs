@@ -9,15 +9,35 @@ namespace Negocio
 {
     public class UsuarioNegocio
     {
-        
-        public Usuario Busca_Usuario(string User)
+        public int BuscoID(string Nombre,string Apellido)
+        {
+            try
+            {
+                AccesoDatos Datos = new AccesoDatos();
+                Datos.SetearQuery("SELECT ID FROM USUARIOS WHERE NOMBRE = '" + Nombre + "' and APELLIDO = '"+Apellido+"'");
+                Datos.EjecutarLector();
+
+                if(Datos.Lector.Read())
+                {
+                    return Datos.Lector.GetInt32(0);
+                }
+
+                return 0;
+            }
+            catch (Exception Ex)
+            {
+
+                throw Ex;
+            }
+        }
+        public Usuario Busca_Usuario(string Nombre,string Apellido)
         {
             AccesoDatos Datos = new AccesoDatos();
             UsuarioNegocio UsuNeg = new UsuarioNegocio();
 
             try
             {
-                Datos.SetearQuery("SELECT a.[ID],a.[Nombre],a.[ID_Role],r.DESCRIPCION , a.[Mail], a.apellido FROM [dbo].[Usuarios] as a inner join [dbo].[ROLES] as r on a.ID_Role = r.ID where a.[Nombre] = '" + User +"'" );
+                Datos.SetearQuery("SELECT a.[ID],a.[Nombre],a.[ID_Role],r.DESCRIPCION , a.[Mail], a.apellido,a.Nombre_Usuario FROM [dbo].[Usuarios] as a inner join [dbo].[ROLES] as r on a.ID_Role = r.ID WHERE NOMBRE = '" + Nombre + "' and APELLIDO = '" + Apellido + "'");
                 Datos.EjecutarLector();
 
                 Usuario Us;
@@ -32,6 +52,7 @@ namespace Negocio
                     Us.Role.Descripcion = Datos.Lector.GetString(3);
                     Us.Mail = Datos.Lector.GetString(4);
                     Us.Apellido = Datos.Lector.GetString(5);
+                    Us.NombreUsuario = Datos.Lector.GetString(6);
 
                     return Us;
                 }
@@ -52,7 +73,7 @@ namespace Negocio
 
             try
             {
-                Datos.SetearQuery("SELECT a.[ID],a.[Nombre],a.[ID_Role],r.DESCRIPCION , a.[Mail],a.Apellido FROM [dbo].[Usuarios] as a inner join [dbo].[ROLES] as r on a.ID_Role = r.ID where a.[Nombre] = '" + User + "' and a.[Password] = '" + Pass + "'");
+                Datos.SetearQuery("SELECT a.[ID],a.[Nombre],a.[ID_Role],r.DESCRIPCION , a.[Mail],a.Apellido,a.Nombre_Usuario FROM [dbo].[Usuarios] as a inner join [dbo].[ROLES] as r on a.ID_Role = r.ID where a.[Nombre_Usuario] = '" + User + "' and a.[Password] = '" + Pass + "'");
 
                 Datos.EjecutarLector();
                 Usuario Us;
@@ -67,6 +88,7 @@ namespace Negocio
                     Us.Role.Descripcion = Datos.Lector.GetString(3);
                     Us.Mail = Datos.Lector.GetString(4);
                     Us.Apellido = Datos.Lector.GetString(5);
+                    Us.NombreUsuario = Datos.Lector.GetString(6);
 
                     return Us;
                 }
@@ -86,12 +108,13 @@ namespace Negocio
             AccesoDatos Datos = new AccesoDatos();
             try
             {
-                Datos.SetearQuery("insert into Usuarios values (@Nombre,@Pass,@IDRole,@Mail,@Apellido)");
+                Datos.SetearQuery("insert into Usuarios values (@Nombre,@Nombre_Usuario,@Pass,@IDRole,@Mail,@Apellido)");
                 Datos.AgregarParametro("@Nombre", Us.Nombre.ToString());
                 Datos.AgregarParametro("@Pass", Us.Password.ToString());
                 Datos.AgregarParametro("@IDRole", Us.Role.ID.ToString());
                 Datos.AgregarParametro("@Mail", Us.Mail.ToString());
                 Datos.AgregarParametro("@Apellido", Us.Apellido.ToString());
+                Datos.AgregarParametro("@Nombre_Usuario",Us.NombreUsuario.ToString());
 
                 Datos.Ejecucion_Accion();
 

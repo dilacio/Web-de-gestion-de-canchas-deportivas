@@ -36,10 +36,13 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
+                                        <label class="label">Nombre de Usuario</label>
+                                        <asp:TextBox runat="server" ID="txbUser" required="true" ReadOnly="true"></asp:TextBox>
+                                    </div>
+                                     <div class="col-md-6">
                                         <label class="label">Nombre del centro</label>
                                         <asp:TextBox runat="server" ID="txbCentroNombre" required="true"></asp:TextBox>
-
                                     </div>
                                 </div>
                                 <div class="row">
@@ -57,7 +60,8 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <input type="button" class="adam-button" onclick="history.back()" name="volver atrás" value="volver atrás">
+                                        <asp:Button class="adam-button" runat="server" id="btnVolver" Style="background-color: firebrick" Width="300px" Text="volver atrás" OnClick="btnVolver_Click"  />
+                                        
                                     </div>
                                     <div class="col-md-6 align-content-md-center">
                                         <asp:Button class="adam-button" runat="server" ID="btnConfirmar" Text="Confirmar" pattern=".+@foo.com" OnClick="btnConfirmar_Click" />

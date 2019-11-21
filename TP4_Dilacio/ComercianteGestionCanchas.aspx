@@ -53,7 +53,7 @@
                                         <asp:Button class="adam-button" runat="server" ID="btnActualizar" Text="Guardar" Style="background-color: blueviolet" Width="300px" OnClick="btnActualizar_Click" />
                                     </div>
                                     <div class="col-g">
-                                                 <input type="button" class="adam-button" onclick="history.back()"  Style="background-color: blueviolet" Width="300px" name="volver atrás" value="volver atrás">
+                                                 <asp:Button class="adam-button" runat="server" id="Button1" Style="background-color: firebrick" Width="300px" Text="volver atrás" OnClick="btnVolver_Click"  />
                                     </div>
                                 </div>
   
@@ -90,7 +90,7 @@
                                         <asp:Button class="adam-button" runat="server" ID="btnAgregar" Text="Guardar" Style="background-color: firebrick" Width="300px" OnClick="btnAgregar_Click" />
                                     </div>
                                     <div class="col-6">
-                                                 <input type="button" class="adam-button" onclick="history.back()"  Style="background-color: firebrick" Width="300px" name="volver atrás" value="volver atrás">
+                                        <asp:Button class="adam-button" runat="server" id="btnVolver" Style="background-color: firebrick" Width="300px" Text="volver atrás" OnClick="btnVolver_Click"  />
                                     </div>
                                 </div>
                                 <br>

@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ComercianteABMDatos.aspx" />
+    <Content Include="ComercianteAltaCentro.aspx" />
     <Content Include="ComercianteGestionCanchas.aspx" />
     <Content Include="ComercianteHome.aspx" />
     <Content Include="ComercianteVerReservas.aspx" />
@@ -89,6 +90,13 @@
     </Compile>
     <Compile Include="ComercianteABMDatos.aspx.designer.cs">
       <DependentUpon>ComercianteABMDatos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ComercianteAltaCentro.aspx.cs">
+      <DependentUpon>ComercianteAltaCentro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComercianteAltaCentro.aspx.designer.cs">
+      <DependentUpon>ComercianteAltaCentro.aspx</DependentUpon>
     </Compile>
     <Compile Include="ComercianteGestionCanchas.aspx.cs">
       <DependentUpon>ComercianteGestionCanchas.aspx</DependentUpon>

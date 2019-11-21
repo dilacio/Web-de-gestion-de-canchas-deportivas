@@ -32,14 +32,15 @@ namespace TP4_Dilacio
             Usuario usuario = new Usuario();
             RoleNegocio RolNeg = new RoleNegocio();
 
-            usuario = UsNeg.Busca_Usuario(txbUser.Value);
+            usuario = UsNeg.Busca_Usuario(txbNombre.Value,txbApellido.Value);
             
 
             if (usuario == null  )
             {
                 usuario = new Usuario();
 
-                usuario.Nombre = txbUser.Value;
+                usuario.Nombre = txbNombre.Value;
+                usuario.NombreUsuario = txbUser.Value;
                 usuario.Apellido = txbApellido.Value;
                 usuario.Mail = txbMail.Value;
                 usuario.Password = txbPass.Value;
@@ -49,9 +50,21 @@ namespace TP4_Dilacio
 
                 if(UsNeg.Guardar(usuario))
                 {
-                    Response.Write("<script>alert('Usuario dado de alta correctamente, por favor inicie sesion');</script>");
-
-                    Response.Redirect("HomeView.aspx");
+                    if(usuario.Role.Descripcion == "Jugador")
+                    {
+                        usuario.IDUsuario = UsNeg.BuscoID(usuario.Nombre, usuario.Apellido);
+                        Session["User_Home"] = usuario;
+                        Response.Write("<script>alert('Usuario dado de alta correctamente, por favor inicie sesion');</script>");
+                        Response.Redirect("JugadorHome.aspx");
+                    }
+                    else
+                    {
+                        usuario.IDUsuario = UsNeg.BuscoID(usuario.Nombre, usuario.Apellido);
+                        Session["User_Home"] = usuario;
+                        Response.Write("<script>alert('Usuario dado de alta correctamente, por favor ahora de de alta su centro');</script>");
+                        Response.Redirect("ComercianteAltaCentro.aspx");
+                    }
+                    
                 }
             }
             else

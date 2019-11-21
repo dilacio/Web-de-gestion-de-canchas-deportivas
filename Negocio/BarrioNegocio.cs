@@ -11,6 +11,33 @@ namespace Negocio
     {
         AccesoDatos Datos = new AccesoDatos();
 
+        public Barrio BuscarPorNombre(string Nombre)
+        {
+
+            try
+            {
+                Barrio Aux = new Barrio();
+                AccesoDatos Datos = new AccesoDatos();
+                Datos.SetearQuery("SELECT ID, NOMBRE,ID_Localidad FROM BARRIOS WHERE NOMBRE = '"+Nombre+ "'" );
+                Datos.EjecutarLector();
+
+                if(Datos.Lector.Read())
+                {
+                    Aux = new Barrio();
+
+                    Aux.ID = Datos.Lector.GetInt32(0);
+                    Aux.Nombre = Datos.Lector.GetString(1);
+                    Aux.Localidad = new Localidad();
+                    Aux.Localidad.ID = Datos.Lector.GetInt32(2);
+                }
+                return Aux;
+            }
+            catch (Exception Ex)
+            {
+
+                throw Ex;
+            }
+        }
         public List<Barrio> BuscarPorProvincia(string Provincia)
         {
             try

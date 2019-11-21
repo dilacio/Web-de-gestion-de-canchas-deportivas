@@ -66,6 +66,7 @@ namespace TP4_Dilacio
                 else
                 {
                     Session["User_Home"] = Usuario;
+
                     Response.Redirect("ComercianteHome.aspx");
                 }
             }

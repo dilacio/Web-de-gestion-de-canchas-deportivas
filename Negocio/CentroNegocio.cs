@@ -139,7 +139,22 @@ namespace Negocio
 
                 throw Ex;
             }
+        }
+        public bool Guardar(CentroDeporte Centro)
+        {
+            try
+            {
+                AccesoDatos Datos = new AccesoDatos();
+                Datos.SetearQuery("INSERT INTO CENTROS_DEPORTES VALUES ('"+Centro.Nombre+"', "+Centro.Barrio.ID+",'"+Centro.Direccion+"',"+Centro.Dueño.IDUsuario+")");
+                Datos.Ejecucion_Accion();
 
+                return true;
+            }
+            catch (Exception Ex)
+            {
+
+                throw Ex;
+            }
         }
         public CentroDeporte BuscarCentroXDueño(Usuario User)
         {
