@@ -19,7 +19,7 @@ namespace Negocio
 
             try
             {
-                Datos.SetearQuery("SELECT  A.[ID],A.[ID_Centro],A.[nombre],A.[ID_Actividad] FROM [TP_MATCHPOINT].[dbo].[CANCHAS] AS A INNER JOIN Centros_Deportes AS C ON A.ID_CENTRO = C.ID WHERE ID_CENTRO ="+Centro);
+                Datos.SetearQuery("SELECT  A.[ID],A.[ID_Centro],A.[nombre],A.[ID_Actividad] FROM [CANCHAS] AS A INNER JOIN Centros_Deportes AS C ON A.ID_CENTRO = C.ID WHERE ID_CENTRO ="+Centro);
                 Datos.EjecutarLector();
 
                 while (Datos.Lector.Read())
@@ -54,7 +54,7 @@ namespace Negocio
 
             try
             {
-                Datos.SetearQuery("SELECT  A.[ID],A.[ID_Centro],A.[nombre],A.[ID_Actividad] FROM [TP_MATCHPOINT].[dbo].[CANCHAS] AS A INNER JOIN Centros_Deportes AS C ON A.ID_CENTRO = C.ID join Actividades as act on act.ID = a.ID_Actividad WHERE ID_CENTRO ="+Centro+ "and act.Nombre = '" +Deporte+"'");
+                Datos.SetearQuery("SELECT  A.[ID],A.[ID_Centro],A.[nombre],A.[ID_Actividad] FROM [CANCHAS] AS A INNER JOIN Centros_Deportes AS C ON A.ID_CENTRO = C.ID join Actividades as act on act.ID = a.ID_Actividad WHERE ID_CENTRO ="+Centro+ "and act.Nombre = '" +Deporte+"'");
                 Datos.EjecutarLector();
 
                 while (Datos.Lector.Read())
@@ -99,7 +99,7 @@ namespace Negocio
             {
                 Cancha Aux = new Cancha();
                 AccesoDatos Datos = new AccesoDatos();
-                Datos.SetearQuery("SELECT [ID],[ID_Centro],[nombre],[ID_Actividad] FROM [dbo].[CANCHAS] where nombre = '"+NombreCancha+"' and id_centro =" + IDCentro);
+                Datos.SetearQuery("SELECT [ID],[ID_Centro],[nombre],[ID_Actividad] FROM [CANCHAS] where nombre = '"+NombreCancha+"' and id_centro =" + IDCentro);
                 Datos.EjecutarLector();
 
                 if(Datos.Lector.Read())

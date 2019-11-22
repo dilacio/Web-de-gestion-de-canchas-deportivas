@@ -15,7 +15,7 @@ namespace Negocio
             AccesoDatos Datos = new AccesoDatos();
             try
             {
-                Datos.SetearQuery("SELECT [ID],[ID_CANCHA],[HORA_DESDE],[HORA_HASTA],[DURACIONJUEGO] FROM [TP_MATCHPOINT].[dbo].[HORARIOS] WHERE ID_CANCHA ="+ Cancha);
+                Datos.SetearQuery("SELECT [ID],[ID_CANCHA],[HORA_DESDE],[HORA_HASTA],[DURACIONJUEGO] FROM [HORARIOS] WHERE ID_CANCHA ="+ Cancha);
                 Datos.EjecutarLector();
 
                 if (Datos.Lector.Read())

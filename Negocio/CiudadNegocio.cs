@@ -40,7 +40,7 @@ namespace Negocio
 
             try
             {
-                Datos.SetearQuery("SELECT [ID],[NOMBRE] FROM [TP_MATCHPOINT].[dbo].[CIUDADES]");
+                Datos.SetearQuery("SELECT [ID],[NOMBRE] FROM [CIUDADES]");
                 Datos.EjecutarLector();
 
                 while (Datos.Lector.Read())

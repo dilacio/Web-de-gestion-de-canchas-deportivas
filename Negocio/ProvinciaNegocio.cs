@@ -18,7 +18,7 @@ namespace Negocio
 
             try
             {
-                Datos.SetearQuery("SELECT [ID],[NOMBRE] FROM [TP_MATCHPOINT].[dbo].[PROVINCIAS]");
+                Datos.SetearQuery("SELECT [ID],[NOMBRE] FROM [PROVINCIAS]");
                 Datos.EjecutarLector();
 
                 while (Datos.Lector.Read())

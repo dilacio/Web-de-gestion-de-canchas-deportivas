@@ -70,7 +70,7 @@ namespace Negocio
 
             try
             {
-                Datos.SetearQuery("SELECT [ID],[NOMBRE] FROM [TP_MATCHPOINT].[dbo].[Actividades]");
+                Datos.SetearQuery("SELECT [ID],[NOMBRE] FROM [Actividades]");
                 Datos.EjecutarLector();
 
                 while (Datos.Lector.Read())
@@ -121,7 +121,7 @@ namespace Negocio
             {
                 AccesoDatos Datos = new AccesoDatos();
 
-                Datos.SetearQuery("SELECT a.[ID],a.[Nombre] FROM [TP_MATCHPOINT].[dbo].[Actividades] as a inner join Actividades_Centros as ac on ac.id_actividad = a.ID inner join Centros_Deportes as c on c.ID = ac.ID_Centro where c.NOMBRE = '"+Centro+"'");
+                Datos.SetearQuery("SELECT a.[ID],a.[Nombre] FROM [Actividades] as a inner join Actividades_Centros as ac on ac.id_actividad = a.ID inner join Centros_Deportes as c on c.ID = ac.ID_Centro where c.NOMBRE = '"+Centro+"'");
                 Datos.EjecutarLector();
 
                 while (Datos.Lector.Read())

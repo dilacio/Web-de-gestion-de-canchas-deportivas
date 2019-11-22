@@ -37,7 +37,7 @@ namespace Negocio
 
             try
             {
-                Datos.SetearQuery("SELECT a.[ID],a.[Nombre],a.[ID_Role],r.DESCRIPCION , a.[Mail], a.apellido,a.Nombre_Usuario FROM [dbo].[Usuarios] as a inner join [dbo].[ROLES] as r on a.ID_Role = r.ID WHERE NOMBRE = '" + Nombre + "' and APELLIDO = '" + Apellido + "'");
+                Datos.SetearQuery("SELECT a.[ID],a.[Nombre],a.[ID_Role],r.DESCRIPCION , a.[Mail], a.apellido,a.Nombre_Usuario FROM [Usuarios] as a inner join [dbo].[ROLES] as r on a.ID_Role = r.ID WHERE NOMBRE = '" + Nombre + "' and APELLIDO = '" + Apellido + "'");
                 Datos.EjecutarLector();
 
                 Usuario Us;
@@ -73,7 +73,7 @@ namespace Negocio
 
             try
             {
-                Datos.SetearQuery("SELECT a.[ID],a.[Nombre],a.[ID_Role],r.DESCRIPCION , a.[Mail],a.Apellido,a.Nombre_Usuario FROM [dbo].[Usuarios] as a inner join [dbo].[ROLES] as r on a.ID_Role = r.ID where a.[Nombre_Usuario] = '" + User + "' and a.[Password] = '" + Pass + "'");
+                Datos.SetearQuery("SELECT a.[ID],a.[Nombre],a.[ID_Role],r.DESCRIPCION , a.[Mail],a.Apellido,a.Nombre_Usuario FROM [Usuarios] as a inner join [ROLES] as r on a.ID_Role = r.ID where a.[Nombre_Usuario] = '" + User + "' and a.[Password] = '" + Pass + "'");
 
                 Datos.EjecutarLector();
                 Usuario Us;

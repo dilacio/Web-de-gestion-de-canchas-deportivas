@@ -20,7 +20,7 @@ namespace Negocio
 
             try
             {
-                Datos.SetearQuery("SELECT [ID],[DESCRIPCION] FROM [TP_MATCHPOINT].[dbo].[ROLES]");
+                Datos.SetearQuery("SELECT [ID],[DESCRIPCION] FROM [ROLES]");
                 Datos.EjecutarLector();
 
                 while (Datos.Lector.Read())
@@ -48,7 +48,7 @@ namespace Negocio
 
             try
             {
-                Datos.SetearQuery("SELECT [ID],[DESCRIPCION] FROM [TP_MATCHPOINT].[dbo].[ROLES] WHERE [DESCRIPCION]= '" + Valor + "'");
+                Datos.SetearQuery("SELECT [ID],[DESCRIPCION] FROM [ROLES] WHERE [DESCRIPCION]= '" + Valor + "'");
                 Datos.EjecutarLector();
 
                 if (Datos.Lector.Read())

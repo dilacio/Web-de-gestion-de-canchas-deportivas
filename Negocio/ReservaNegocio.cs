@@ -18,7 +18,7 @@ namespace Negocio
                 List<Reserva> Lista = new List<Reserva>();
                 Reserva Aux = new Reserva();
                 AccesoDatos Datos = new AccesoDatos();
-                Datos.SetearQuery("SELECT R.[ID] ,R.[ID_Cancha],C.nombre,R.[ID_Actividad],A.Nombre,R.[FECHA],R.[HORA_DESDE],R.[HORA_HASTA],R.[ID_Usuario],R.[ID_Estado_Reserva] ,er.DESCRIPCION,cen.NOMBRE , cen.direccion FROM [TP_MATCHPOINT].[dbo].[Reservas]  AS R JOIN CANCHAS AS C ON C.ID = R.ID_Cancha JOIN Actividades AS A ON A.ID = R.ID_Actividad JOIN Usuarios AS U ON U.ID = R.ID_Usuario JOIN Estado_Reserva AS ER ON ER.ID = R.ID_Estado_Reserva join Centros_Deportes as cen on cen.ID = c.ID_Centro WHERE R.id_estado_reserva = 1 and Cen.ID = " + Centro.ID);
+                Datos.SetearQuery("SELECT R.[ID] ,R.[ID_Cancha],C.nombre,R.[ID_Actividad],A.Nombre,R.[FECHA],R.[HORA_DESDE],R.[HORA_HASTA],R.[ID_Usuario],R.[ID_Estado_Reserva] ,er.DESCRIPCION,cen.NOMBRE , cen.direccion FROM [Reservas]  AS R JOIN CANCHAS AS C ON C.ID = R.ID_Cancha JOIN Actividades AS A ON A.ID = R.ID_Actividad JOIN Usuarios AS U ON U.ID = R.ID_Usuario JOIN Estado_Reserva AS ER ON ER.ID = R.ID_Estado_Reserva join Centros_Deportes as cen on cen.ID = c.ID_Centro WHERE R.id_estado_reserva = 1 and Cen.ID = " + Centro.ID);
                 Datos.EjecutarLector();
 
                 while (Datos.Lector.Read())
@@ -76,7 +76,7 @@ namespace Negocio
                 List<Reserva> Lista = new List<Reserva>();
                 Reserva Aux = new Reserva();
                 AccesoDatos Datos = new AccesoDatos();
-                Datos.SetearQuery("SELECT R.[ID] ,R.[ID_Cancha],C.nombre,R.[ID_Actividad],A.Nombre,R.[FECHA],R.[HORA_DESDE],R.[HORA_HASTA],R.[ID_Usuario],R.[ID_Estado_Reserva] ,er.DESCRIPCION,cen.NOMBRE,cen.Direccion  FROM [TP_MATCHPOINT].[dbo].[Reservas]  AS R JOIN CANCHAS AS C ON C.ID = R.ID_Cancha JOIN Actividades AS A ON A.ID = R.ID_Actividad JOIN Usuarios AS U ON U.ID = R.ID_Usuario JOIN Estado_Reserva AS ER ON ER.ID = R.ID_Estado_Reserva join Centros_Deportes as cen on cen.ID = c.ID_Centro WHERE R.id_estado_reserva = 1 and ID_Usuario = " + User.IDUsuario);
+                Datos.SetearQuery("SELECT R.[ID] ,R.[ID_Cancha],C.nombre,R.[ID_Actividad],A.Nombre,R.[FECHA],R.[HORA_DESDE],R.[HORA_HASTA],R.[ID_Usuario],R.[ID_Estado_Reserva] ,er.DESCRIPCION,cen.NOMBRE,cen.Direccion  FROM [Reservas]  AS R JOIN CANCHAS AS C ON C.ID = R.ID_Cancha JOIN Actividades AS A ON A.ID = R.ID_Actividad JOIN Usuarios AS U ON U.ID = R.ID_Usuario JOIN Estado_Reserva AS ER ON ER.ID = R.ID_Estado_Reserva join Centros_Deportes as cen on cen.ID = c.ID_Centro WHERE R.id_estado_reserva = 1 and ID_Usuario = " + User.IDUsuario);
                 Datos.EjecutarLector();
 
                 while(Datos.Lector.Read())

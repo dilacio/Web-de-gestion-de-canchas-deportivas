@@ -115,7 +115,7 @@ namespace Negocio
             CentroDeporte Aux = new CentroDeporte();
             try
             {
-                Datos.SetearQuery("SELECT a.[ID],a.[NOMBRE],a.[Direccion],b.ID,b.Nombre,b.ID_Localidad FROM [TP_MATCHPOINT].[dbo].[Centros_Deportes] as a join Barrios as b on b.ID = a.ID_BARRIO where a.Nombre = '" + Nombre + "'");
+                Datos.SetearQuery("SELECT a.[ID],a.[NOMBRE],a.[Direccion],b.ID,b.Nombre,b.ID_Localidad FROM [Centros_Deportes] as a join Barrios as b on b.ID = a.ID_BARRIO where a.Nombre = '" + Nombre + "'");
                 Datos.EjecutarLector();
 
                 if (Datos.Lector.Read())
@@ -163,7 +163,7 @@ namespace Negocio
             List<CentroDeporte> Lista = new List<CentroDeporte>();
             try
             {
-                Datos.SetearQuery("SELECT C.[ID],C.[NOMBRE],C.[Direccion],c.id_barrio  FROM [TP_MATCHPOINT].[dbo].[Centros_Deportes] AS C INNER JOIN usuarios as u on u.id = c.ID_DUEÑO WHERE U.ID  = " + User.IDUsuario );
+                Datos.SetearQuery("SELECT C.[ID],C.[NOMBRE],C.[Direccion],c.id_barrio  FROM [Centros_Deportes] AS C INNER JOIN usuarios as u on u.id = c.ID_DUEÑO WHERE U.ID  = " + User.IDUsuario );
                 Datos.EjecutarLector();
 
                 if (Datos.Lector.Read())

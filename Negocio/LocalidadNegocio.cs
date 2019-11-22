@@ -17,7 +17,7 @@ namespace Negocio
             AccesoDatos Datos = new AccesoDatos();
             Localidad Aux = new Localidad();
 
-            Datos.SetearQuery("SELECT L.[ID],L.[NOMBRE],L.[CP],L.[ID_CIUDAD],c.nombre FROM [TP_MATCHPOINT].[dbo].[LOCALIDADES] AS L JOIN CIUDADES AS C ON L.ID_CIUDAD = C.ID join provincias as p on p.ID = C.ID_PROVINCIA WHERE P.NOMBRE = '"+Provincia+"'");
+            Datos.SetearQuery("SELECT L.[ID],L.[NOMBRE],L.[CP],L.[ID_CIUDAD],c.nombre FROM [LOCALIDADES] AS L JOIN CIUDADES AS C ON L.ID_CIUDAD = C.ID join provincias as p on p.ID = C.ID_PROVINCIA WHERE P.NOMBRE = '"+Provincia+"'");
             Datos.EjecutarLector();
 
             while (Datos.Lector.Read())
@@ -39,7 +39,7 @@ namespace Negocio
             AccesoDatos Datos = new AccesoDatos();
             Localidad Aux = new Localidad();
 
-            Datos.SetearQuery("SELECT L.[ID],L.[NOMBRE],L.[CP],L.[ID_CIUDAD],c.nombre  FROM [TP_MATCHPOINT].[dbo].[LOCALIDADES] AS L  JOIN CIUDADES AS C  ON L.ID_CIUDAD = C.ID  WHERE C.NOMBRE = '"+ Ciudad + "'");
+            Datos.SetearQuery("SELECT L.[ID],L.[NOMBRE],L.[CP],L.[ID_CIUDAD],c.nombre  FROM [LOCALIDADES] AS L  JOIN CIUDADES AS C  ON L.ID_CIUDAD = C.ID  WHERE C.NOMBRE = '"+ Ciudad + "'");
             Datos.EjecutarLector();
 
             while (Datos.Lector.Read())
@@ -65,7 +65,7 @@ namespace Negocio
 
             try
             {
-                Datos.SetearQuery("SELECT [ID],[NOMBRE] FROM [TP_MATCHPOINT].[dbo].[LOCALIDADES]");
+                Datos.SetearQuery("SELECT [ID],[NOMBRE] FROM [LOCALIDADES]");
                 Datos.EjecutarLector();
 
                 while (Datos.Lector.Read())
@@ -94,7 +94,7 @@ namespace Negocio
 
             try
             {
-                Datos.SetearQuery("SELECT l.[ID],l.[NOMBRE] FROM [TP_MATCHPOINT].[dbo].[LOCALIDADES] as l  join Ciudades as c on c.id = l.id_ciudad where c.nombre ='" +Ciudad+"'");
+                Datos.SetearQuery("SELECT l.[ID],l.[NOMBRE] FROM [LOCALIDADES] as l  join Ciudades as c on c.id = l.id_ciudad where c.nombre ='" +Ciudad+"'");
                 Datos.EjecutarLector();
 
                 while (Datos.Lector.Read())
