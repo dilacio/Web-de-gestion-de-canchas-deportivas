@@ -28,13 +28,14 @@ namespace TP4_Dilacio
             CentroDeporte Centro = new CentroDeporte();
 
             Centro = CenNeg.BuscarCentroXDueño(Usuario);
-       
+
             txbnombre.Text = Usuario.Nombre;
             txbMail.Text = Usuario.Mail;
             txbape.Text = Usuario.Apellido;
             txbUser.Text = Usuario.NombreUsuario;
             txbDireccion.Text = Centro.Direccion;
             txbCentroNombre.Text = Centro.Nombre;
+            txbCancelacionMinimna.Text = Centro.TiempoMinCancelacion.ToString();
 
             Cargo_ddList();
         }
@@ -60,6 +61,7 @@ namespace TP4_Dilacio
                 Centro_Nuevo.ID = Centro.ID ;
                 Centro_Nuevo.Nombre = txbCentroNombre.Text;
                 Centro_Nuevo.Direccion = txbDireccion.Text;
+                Centro_Nuevo.TiempoMinCancelacion = TimeSpan.Parse(txbCancelacionMinimna.Text);
 
                if(CenNeg.Actualizar(Centro_Nuevo))
                 {

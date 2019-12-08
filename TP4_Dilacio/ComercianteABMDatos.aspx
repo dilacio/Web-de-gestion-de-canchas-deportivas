@@ -58,6 +58,10 @@
 
                                     </div>
                                 </div>
+                                <div>
+                                    <label class="label">Horario minimo de cancelacion de reserva</label>
+                                        <asp:TextBox runat="server"  ID="txbCancelacionMinimna" required="true"></asp:TextBox>
+                                </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <asp:Button class="adam-button" runat="server" id="btnVolver" Style="background-color: firebrick" Width="300px" Text="volver atrás" OnClick="btnVolver_Click"  />

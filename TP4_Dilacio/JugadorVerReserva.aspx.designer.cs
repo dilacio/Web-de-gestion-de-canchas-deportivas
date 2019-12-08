@@ -22,15 +22,6 @@ namespace TP4_Dilacio {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl titulo;
         
         /// <summary>
-        /// txbActividad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbActividad;
-        
-        /// <summary>
         /// gvReservasHechas control.
         /// </summary>
         /// <remarks>
@@ -38,5 +29,23 @@ namespace TP4_Dilacio {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvReservasHechas;
+        
+        /// <summary>
+        /// Div1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div1;
+        
+        /// <summary>
+        /// GvAusencias control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GvAusencias;
     }
 }

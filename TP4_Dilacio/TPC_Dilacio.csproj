@@ -74,6 +74,7 @@
     <Content Include="ComercianteVerReservas.aspx" />
     <Content Include="CrearCuenta.aspx" />
     <Content Include="HomeView.aspx" />
+    <Content Include="JugadorAvisaNoIR.aspx" />
     <Content Include="JugadorReservaFallida.aspx" />
     <Content Include="JugadorFinalizar.aspx" />
     <Content Include="JugadorHome.aspx" />
@@ -81,6 +82,7 @@
     <Content Include="JugadorReservaSeleccion.aspx" />
     <Content Include="JugadorSeleccionCentro.aspx" />
     <Content Include="JugadorVerReserva.aspx" />
+    <Content Include="Portada.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +135,13 @@
     <Compile Include="HomeView.aspx.designer.cs">
       <DependentUpon>HomeView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="JugadorAvisaNoIR.aspx.cs">
+      <DependentUpon>JugadorAvisaNoIR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JugadorAvisaNoIR.aspx.designer.cs">
+      <DependentUpon>JugadorAvisaNoIR.aspx</DependentUpon>
+    </Compile>
     <Compile Include="JugadorReservaFallida.aspx.cs">
       <DependentUpon>JugadorReservaFallida.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -183,6 +192,13 @@
       <DependentUpon>JugadorVerReserva.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Portada.aspx.cs">
+      <DependentUpon>Portada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portada.aspx.designer.cs">
+      <DependentUpon>Portada.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

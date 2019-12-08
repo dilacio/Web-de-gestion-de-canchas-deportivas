@@ -16,7 +16,7 @@ namespace Negocio
             {
                 AccesoDatos Datos = new AccesoDatos();
 
-                Datos.SetearQuery("UPDATE CENTROS_DEPORTES SET NOMBRE = '"+Centro.Nombre+"',DIRECCION = '"+Centro.Direccion+"' WHERE ID = "+Centro.ID);
+                Datos.SetearQuery("UPDATE CENTROS_DEPORTES SET NOMBRE = '"+Centro.Nombre+"',DIRECCION = '"+Centro.Direccion+"', TIEMPO_MIN_CANCELACION = '"+Centro.TiempoMinCancelacion+"' WHERE ID = "+Centro.ID);
                 Datos.Ejecucion_Accion();
 
                 return true;
@@ -145,7 +145,7 @@ namespace Negocio
             try
             {
                 AccesoDatos Datos = new AccesoDatos();
-                Datos.SetearQuery("INSERT INTO CENTROS_DEPORTES VALUES ('"+Centro.Nombre+"', "+Centro.Barrio.ID+",'"+Centro.Direccion+"',"+Centro.Dueño.IDUsuario+")");
+                Datos.SetearQuery("INSERT INTO CENTROS_DEPORTES VALUES ('"+Centro.Nombre+"', "+Centro.Barrio.ID+",'"+Centro.Direccion+"',"+Centro.Dueño.IDUsuario+",'00:00')");
                 Datos.Ejecucion_Accion();
 
                 return true;
@@ -163,7 +163,7 @@ namespace Negocio
             List<CentroDeporte> Lista = new List<CentroDeporte>();
             try
             {
-                Datos.SetearQuery("SELECT C.[ID],C.[NOMBRE],C.[Direccion],c.id_barrio  FROM [Centros_Deportes] AS C INNER JOIN usuarios as u on u.id = c.ID_DUEÑO WHERE U.ID  = " + User.IDUsuario );
+                Datos.SetearQuery("SELECT C.[ID],C.[NOMBRE],C.[Direccion],c.id_barrio, c.tiempo_min_cancelacion  FROM [Centros_Deportes] AS C INNER JOIN usuarios as u on u.id = c.ID_DUEÑO WHERE U.ID  = " + User.IDUsuario );
                 Datos.EjecutarLector();
 
                 if (Datos.Lector.Read())
@@ -175,7 +175,7 @@ namespace Negocio
                     Aux.Barrio = new Barrio();
 
                     Aux.Barrio.ID = Datos.Lector.GetInt32(3);
-
+                    Aux.TiempoMinCancelacion = Datos.Lector.GetTimeSpan(4);
                     Lista.Add(Aux);
                 }
                 return Aux;

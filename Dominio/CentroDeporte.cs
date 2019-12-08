@@ -15,6 +15,7 @@ namespace Dominio
         public string Direccion { get; set; }
         public Usuario Dueño { get; set; }
 
+        public TimeSpan TiempoMinCancelacion { get; set; }
         public override string ToString()
         {
             return Nombre;
