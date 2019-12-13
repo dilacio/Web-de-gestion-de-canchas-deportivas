@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ComercianteAltaCentro.aspx.cs" Inherits="TP4_Dilacio.ComercianteAltaCentro" MasterPageFile="~/Site1.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ComercianteAltaCentro.aspx.cs" Inherits="TP4_Dilacio.ComercianteAltaCentro" MasterPageFile="~/Comerciante.Master" %>
 
 <asp:Content ID="ComAltCen" ContentPlaceHolderID ="Cuerpo" runat="server">
  

@@ -22,8 +22,8 @@
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="#">Match Point </a>
-
+            <a class="navbar-brand">Match Point </a>
+            <a class="navbar-brand" href="HomeView.aspx">Cerrar sesion </a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
@@ -34,15 +34,14 @@
         </nav>
         <div class="row">
             <div class="col-md-12" >
-                <br />
-                <h4 style="margin-left: 500px">Podes elegir la cancha que queres jugar</h4>
-                <asp:DropDownList runat="server" ID="ddCanchas" Width="950px" CssClass="adam-button" Style="background-color: firebrick; margin-left: 220px" AutoPostBack="true" OnSelectedIndexChanged="ddCanchas_SelectedIndexChanged" ></asp:DropDownList>
+                <h5 style="margin-left: 500px">Podes elegir la cancha que queres jugar</h5>
+                <asp:DropDownList runat="server" ID="ddCanchas" Width="950px" CssClass="adam-button" Style="background-color: firebrick;margin-top:0; margin-left: 220px" AutoPostBack="true" OnSelectedIndexChanged="ddCanchas_SelectedIndexChanged" ></asp:DropDownList>
                 <hr />
             </div>
         </div>
         <div class="row">
             <div class="col-3">
-                <h3>Seleccioná una fecha</h3>
+                <h5>Seleccioná una fecha</h5>
                 <div class="calendar">
                     <div class="calendar-footer">
                         <div class="next-prev">
@@ -51,7 +50,7 @@
                         </div>
                         <div class="options">
                             <div class="btn jump-today"><i class="far fa-dot-circle fa-sm"></i></div>
-                            <div class="btn ok-btn" runat="server" id="btnOK" onclick="">Completar Fecha</div>
+                            <div class="btn ok-btn" runat="server" id="btnOK" onclick="" style="background-color:blueviolet;color:aliceblue">Completar Fecha</div>
                         </div>
                     </div>
                 </div>

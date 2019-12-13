@@ -57,12 +57,25 @@ namespace TP4_Dilacio
         {
             if(gvCentros.SelectedValue != "")
             {
+                UsuarioNegocio UserNeg = new UsuarioNegocio();
                 Usuario Usuario = new Usuario();
+                CentroDeporte Centro = new CentroDeporte();
+                CentroNegocio CenNeg = new CentroNegocio();
 
                 Session["Centro_Seleccionado"] = gvCentros.SelectedValue;
                 Session["Deporte_Seleccionado"] = ddActividad.SelectedValue;
                 Usuario = (Usuario)(Session["User_Home"]);
-                Response.Redirect("JugadorReservaSeleccion.aspx");
+
+                Centro = CenNeg.BuscarCentro((string)Session["Centro_Seleccionado"]);
+
+                if (!UserNeg.valido_existe_bloqueado(Usuario.IDUsuario,Centro.ID))
+                {
+                    Response.Redirect("JugadorReservaSeleccion.aspx");
+                }
+                else
+                {
+                    Response.Write("<script>alert('El centro que intenta seleccionar no permite que reserves en su centro por mal comportamiento en las reservas, por favor contactarse con el centro');</script>");
+                }
             }
             else
             {

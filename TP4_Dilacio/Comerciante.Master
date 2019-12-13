@@ -1,4 +1,5 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="TP4_Dilacio.Site1" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Comerciante.master.cs" Inherits="TP4_Dilacio.Comerciante" %>
+
 
 <!DOCTYPE html>
 
@@ -29,11 +30,11 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <a class="navbar-brand" href="#">Match Point </a>
-                <a class="navbar-brand" href="HomeView.aspx">Cerrar sesion </a>
+                                 <a class="navbar-brand" href="HomeView.aspx">Cerrar sesion </a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link"  href="JugadorHome.aspx">Home</a>
+                            <a class="nav-link" href="ComercianteHome.aspx">Home</a>
                         </li>
                     </ul>
                 </div>

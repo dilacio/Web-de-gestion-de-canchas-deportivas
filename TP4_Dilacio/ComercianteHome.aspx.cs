@@ -35,5 +35,10 @@ namespace TP4_Dilacio
         {
             Response.Redirect("ComercianteGestionCanchas.aspx");
         }
+
+        protected void btnUsuariosNeg_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ComercianteVerCancelaciones.aspx");
+        }
     }
 }

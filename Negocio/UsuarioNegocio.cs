@@ -9,6 +9,165 @@ namespace Negocio
 {
     public class UsuarioNegocio
     {
+        public bool ActualizoABloqueado(int IDUser, int IDCentro)
+        {
+            try
+            {
+                AccesoDatos Datos = new AccesoDatos();
+                Datos.SetearQuery("UPDATE UsuariosBloqueados SET baja = 1 where ID_Usuario = " + IDUser + "and ID_Centro = " + IDCentro);
+                Datos.Ejecucion_Accion();
+
+                return true;
+            }
+            catch (Exception Ex)
+            {
+
+                return false;
+            }
+        }
+        public bool DesBloquear_Usuario(int IDUser, int IDCentro)
+        {
+            try
+            {
+                AccesoDatos Datos = new AccesoDatos();
+                Datos.SetearQuery("UPDATE UsuariosBloqueados SET baja = 0 where ID_Usuario = "+IDUser+ "and ID_Centro = "+IDCentro);
+                Datos.Ejecucion_Accion();
+
+                return true;
+            }
+            catch (Exception Ex)
+            {
+
+                return false;
+            }
+        }
+        public bool Bloquear_Usuario(int IDUser,int IDCentro)
+        {
+            try
+            {
+                AccesoDatos Datos = new AccesoDatos();
+                Datos.SetearQuery("insert into UsuariosBloqueados values ("+IDUser+","+IDCentro+",1)");
+                Datos.Ejecucion_Accion();
+
+                return true;
+            }
+            catch (Exception Ex)
+            {
+
+                return false;
+            }
+        }
+        public List<Usuario> Usuarios_Desbloqueados (int Centro)
+        {
+            try
+            {
+                List<Usuario> Lista = new List<Usuario>();
+                AccesoDatos Datos = new AccesoDatos();
+                Datos.SetearQuery("select u.ID, u.Nombre,u.Apellido,u.ID_Role,u.Mail,u.Nombre_Usuario from Usuarios as U where  u.ID_Role = 1 and u.ID not in (select UB.ID_Usuario from UsuariosBloqueados as UB where ub.ID_Usuario = u.ID and UB.Baja = 1 and ub.ID_Centro =" + Centro+")");
+                Datos.EjecutarLector();
+
+                while (Datos.Lector.Read())
+                {
+                    Usuario User = new Usuario();
+                    User.IDUsuario = Datos.Lector.GetInt32(0);
+                    User.Nombre = Datos.Lector.GetString(1);
+                    User.Apellido = Datos.Lector.GetString(2);
+                    User.Role = new Role();
+                    User.Role.ID = Datos.Lector.GetInt32(3);
+                    User.Mail = Datos.Lector.GetString(4);
+                    User.NombreUsuario = Datos.Lector.GetString(5);
+
+                    Lista.Add(User);
+
+                }
+                return Lista;
+            }
+            catch (Exception Ex)
+            {
+
+                throw Ex;
+            }
+        }
+        public List<Usuario> Usuarios_Bloqueados (int Centro)
+        {
+            try
+            {
+                List<Usuario> Lista = new List<Usuario>();
+                AccesoDatos Datos = new AccesoDatos();
+                Datos.SetearQuery("SELECT u.ID, u.Nombre,u.Apellido,u.ID_Role,u.Mail,u.Nombre_Usuario FROM USUARIOS AS U INNER JOIN UsuariosBloqueados AS UB ON UB.ID_Usuario = U.ID AND UB.ID_Centro = "+Centro+" WHERE UB.Baja = 1 ");
+                Datos.EjecutarLector();
+
+                while( Datos.Lector.Read() )
+                {
+                    Usuario User = new Usuario();
+                    User.IDUsuario = Datos.Lector.GetInt32(0);
+                    User.Nombre = Datos.Lector.GetString(1);
+                    User.Apellido = Datos.Lector.GetString(2);
+                    User.Role = new Role();
+                    User.Role.ID = Datos.Lector.GetInt32(3);
+                    User.Mail = Datos.Lector.GetString(4);
+                    User.NombreUsuario = Datos.Lector.GetString(5);
+
+                    Lista.Add(User);
+
+                }
+                return Lista;
+            }
+            catch (Exception Ex)
+            {
+
+                throw Ex;
+            }
+        }
+        public bool valido_existe_Desbloqueado(int ID_User, int Centro)
+        {
+            try
+            {
+                AccesoDatos Datos = new AccesoDatos();
+                Datos.SetearQuery("SELECT ID_USUARIO FROM USUARIOSBLOQUEADOS WHERE ID_USUARIO =" + ID_User + " AND ID_CENTRO =" + Centro + " AND BAJA = 0");
+                Datos.EjecutarLector();
+
+                if (Datos.Lector.Read())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception Ex)
+            {
+
+                throw Ex;
+            }
+        }
+        public bool valido_existe_bloqueado( int ID_User, int Centro)
+        {
+            try
+            {
+                AccesoDatos Datos = new AccesoDatos();
+                Datos.SetearQuery("SELECT ID_USUARIO FROM USUARIOSBLOQUEADOS WHERE ID_USUARIO ="+ID_User+" AND ID_CENTRO ="+Centro+" AND BAJA = 1");
+                Datos.EjecutarLector();
+
+                if(Datos.Lector.Read())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception Ex)
+            {
+
+                throw Ex;
+            }
+        }
+        
         public int BuscoID(string Nombre,string Apellido)
         {
             try

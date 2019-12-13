@@ -71,6 +71,7 @@
     <Content Include="ComercianteAltaCentro.aspx" />
     <Content Include="ComercianteGestionCanchas.aspx" />
     <Content Include="ComercianteHome.aspx" />
+    <Content Include="ComercianteVerCancelaciones.aspx" />
     <Content Include="ComercianteVerReservas.aspx" />
     <Content Include="CrearCuenta.aspx" />
     <Content Include="HomeView.aspx" />
@@ -86,6 +87,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comerciante.Master.cs">
+      <DependentUpon>Comerciante.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Comerciante.Master.designer.cs">
+      <DependentUpon>Comerciante.Master</DependentUpon>
+    </Compile>
     <Compile Include="ComercianteABMDatos.aspx.cs">
       <DependentUpon>ComercianteABMDatos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -113,6 +121,13 @@
     </Compile>
     <Compile Include="ComercianteHome.aspx.designer.cs">
       <DependentUpon>ComercianteHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ComercianteVerCancelaciones.aspx.cs">
+      <DependentUpon>ComercianteVerCancelaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComercianteVerCancelaciones.aspx.designer.cs">
+      <DependentUpon>ComercianteVerCancelaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="ComercianteVerReservas.aspx.cs">
       <DependentUpon>ComercianteVerReservas.aspx</DependentUpon>
@@ -208,6 +223,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Comerciante.Master" />
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">

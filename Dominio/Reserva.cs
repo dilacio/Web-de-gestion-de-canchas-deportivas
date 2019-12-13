@@ -16,5 +16,6 @@ namespace Dominio
         public TimeSpan HoraHasta { get; set; }
         public Usuario Usuario { get; set; }
         public EstadoReserva Estado { get; set; }
+
     }
 }

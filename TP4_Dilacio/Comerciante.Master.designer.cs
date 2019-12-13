@@ -10,42 +10,51 @@
 namespace TP4_Dilacio {
     
     
-    public partial class ComercianteHome {
+    public partial class Comerciante {
         
         /// <summary>
-        /// btn_ABM_datos control.
+        /// head control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_ABM_datos;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
-        /// btnGestionCanchas control.
+        /// Estructura_General control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGestionCanchas;
+        protected global::System.Web.UI.HtmlControls.HtmlForm Estructura_General;
         
         /// <summary>
-        /// btnIrReserva_click control.
+        /// Cabecera control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnIrReserva_click;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder Cabecera;
         
         /// <summary>
-        /// btnUsuariosNeg control.
+        /// Cuerpo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUsuariosNeg;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder Cuerpo;
+        
+        /// <summary>
+        /// Pie control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder Pie;
     }
 }

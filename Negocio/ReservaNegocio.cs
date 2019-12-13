@@ -12,6 +12,49 @@ namespace Negocio
     {
         AccesoDatos Datos;
 
+        public bool update_Asistio(int Reserva)
+        {
+            try
+            {
+                AccesoDatos Datos = new AccesoDatos();
+                Datos.SetearQuery("update reservas set id_estado_reserva = 3 where id = " + Reserva);
+                Datos.Ejecucion_Accion();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+
+                return false;
+            }
+        }
+        public List<Reserva> Res_canceladasPorUser()
+        {
+            try
+            {
+                AccesoDatos Datos = new AccesoDatos();
+                List<Reserva> Lista = new List<Reserva>();
+                Datos.SetearQuery("SELECT r.ID_USUARIO,u.Nombre,u.Apellido, COUNT(*) AS CANTIDAD  FROM [TP_MATCHPOINT].[dbo].[Reservas] as r  JOIN Usuarios as u on u.id = r.id_usuario  WHERE ID_ESTADO_RESERVA = 2  group by ID_USUARIO,u.Nombre,u.Apellido  order by cantidad desc");
+                Datos.EjecutarLector();
+
+                while(Datos.Lector.Read())
+                {
+                    Reserva Aux = new Reserva();
+                    Aux.Usuario = new Usuario();
+                    Aux.Usuario.IDUsuario = Datos.Lector.GetInt32(0);
+                    Aux.Usuario.Nombre = Datos.Lector.GetString(1);
+                    Aux.Usuario.Apellido = Datos.Lector.GetString(2);
+                    Aux.ID = Datos.Lector.GetInt32(3);
+
+                    Lista.Add(Aux);
+                }
+                return Lista;
+            }
+            catch (Exception Ex)
+            {
+
+                throw Ex;
+            }
+        }
         public bool LiberarReserva(int IDReserva)
         {
             try
@@ -90,6 +133,93 @@ namespace Negocio
             {
 
                throw Ex;
+            }
+        }
+
+        public List<Reserva> ListarPorCentro_Asistidos(CentroDeporte Centro)
+        {
+            try
+            {
+                List<Reserva> Lista = new List<Reserva>();
+                Reserva Aux = new Reserva();
+                AccesoDatos Datos = new AccesoDatos();
+                Datos.SetearQuery("SELECT R.[ID] ,R.[ID_Cancha],C.nombre,R.[ID_Actividad],A.Nombre,R.[FECHA],R.[HORA_DESDE],R.[HORA_HASTA],R.[ID_Usuario],R.[ID_Estado_Reserva] ,er.DESCRIPCION,cen.NOMBRE , cen.direccion FROM [Reservas]  AS R JOIN CANCHAS AS C ON C.ID = R.ID_Cancha JOIN Actividades AS A ON A.ID = R.ID_Actividad JOIN Usuarios AS U ON U.ID = R.ID_Usuario JOIN Estado_Reserva AS ER ON ER.ID = R.ID_Estado_Reserva join Centros_Deportes as cen on cen.ID = c.ID_Centro WHERE er.id = 3 and Cen.ID = " + Centro.ID);
+                Datos.EjecutarLector();
+
+                while (Datos.Lector.Read())
+                {
+                    Aux = new Reserva();
+
+                    Aux.ID = Datos.Lector.GetInt32(0);
+                    Aux.Cancha = new Cancha();
+                    Aux.Cancha.ID = Datos.Lector.GetInt32(1);
+                    Aux.Cancha.Nombre = Datos.Lector.GetString(2);
+                    Aux.Actividad = new Actividad();
+                    Aux.Actividad.ID = Datos.Lector.GetInt32(3);
+                    Aux.Actividad.Nombre = Datos.Lector.GetString(4);
+                    Aux.Fecha = Datos.Lector.GetDateTime(5);
+                    Aux.HoraDesde = Datos.Lector.GetTimeSpan(6);
+                    Aux.HoraHasta = Datos.Lector.GetTimeSpan(7);
+                    Aux.Usuario = new Usuario();
+                    Aux.Usuario.IDUsuario = Datos.Lector.GetInt32(8);
+                    Aux.Estado = new EstadoReserva();
+                    Aux.Estado.ID = Datos.Lector.GetInt32(9);
+                    Aux.Estado.Descripcion = Datos.Lector.GetString(10);
+                    Aux.Cancha.Centro = new CentroDeporte();
+                    Aux.Cancha.Centro.Nombre = Datos.Lector.GetString(11);
+                    Aux.Cancha.Centro.Direccion = Datos.Lector.GetString(12);
+
+                    Lista.Add(Aux);
+                }
+                return Lista;
+            }
+            catch (Exception Ex)
+            {
+
+                throw Ex;
+            }
+        }
+        public List<Reserva> ListarPorCentro_TodosEstados(CentroDeporte Centro)
+        {
+            try
+            {
+                List<Reserva> Lista = new List<Reserva>();
+                Reserva Aux = new Reserva();
+                AccesoDatos Datos = new AccesoDatos();
+                Datos.SetearQuery("SELECT R.[ID] ,R.[ID_Cancha],C.nombre,R.[ID_Actividad],A.Nombre,R.[FECHA],R.[HORA_DESDE],R.[HORA_HASTA],R.[ID_Usuario],R.[ID_Estado_Reserva] ,er.DESCRIPCION,cen.NOMBRE , cen.direccion FROM [Reservas]  AS R JOIN CANCHAS AS C ON C.ID = R.ID_Cancha JOIN Actividades AS A ON A.ID = R.ID_Actividad JOIN Usuarios AS U ON U.ID = R.ID_Usuario JOIN Estado_Reserva AS ER ON ER.ID = R.ID_Estado_Reserva join Centros_Deportes as cen on cen.ID = c.ID_Centro WHERE er.id <> 3 and Cen.ID = " + Centro.ID);
+                Datos.EjecutarLector();
+
+                while (Datos.Lector.Read())
+                {
+                    Aux = new Reserva();
+
+                    Aux.ID = Datos.Lector.GetInt32(0);
+                    Aux.Cancha = new Cancha();
+                    Aux.Cancha.ID = Datos.Lector.GetInt32(1);
+                    Aux.Cancha.Nombre = Datos.Lector.GetString(2);
+                    Aux.Actividad = new Actividad();
+                    Aux.Actividad.ID = Datos.Lector.GetInt32(3);
+                    Aux.Actividad.Nombre = Datos.Lector.GetString(4);
+                    Aux.Fecha = Datos.Lector.GetDateTime(5);
+                    Aux.HoraDesde = Datos.Lector.GetTimeSpan(6);
+                    Aux.HoraHasta = Datos.Lector.GetTimeSpan(7);
+                    Aux.Usuario = new Usuario();
+                    Aux.Usuario.IDUsuario = Datos.Lector.GetInt32(8);
+                    Aux.Estado = new EstadoReserva();
+                    Aux.Estado.ID = Datos.Lector.GetInt32(9);
+                    Aux.Estado.Descripcion = Datos.Lector.GetString(10);
+                    Aux.Cancha.Centro = new CentroDeporte();
+                    Aux.Cancha.Centro.Nombre = Datos.Lector.GetString(11);
+                    Aux.Cancha.Centro.Direccion = Datos.Lector.GetString(12);
+
+                    Lista.Add(Aux);
+                }
+                return Lista;
+            }
+            catch (Exception Ex)
+            {
+
+                throw Ex;
             }
         }
         public bool BajaReserva( int ReservaID)

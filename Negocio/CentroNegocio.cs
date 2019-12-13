@@ -163,7 +163,7 @@ namespace Negocio
             List<CentroDeporte> Lista = new List<CentroDeporte>();
             try
             {
-                Datos.SetearQuery("SELECT C.[ID],C.[NOMBRE],C.[Direccion],c.id_barrio, c.tiempo_min_cancelacion  FROM [Centros_Deportes] AS C INNER JOIN usuarios as u on u.id = c.ID_DUEÑO WHERE U.ID  = " + User.IDUsuario );
+                Datos.SetearQuery("SELECT C.[ID],C.[NOMBRE],C.[Direccion],c.id_barrio, c.tiempo_min_cancelacion FROM [Centros_Deportes] AS C INNER JOIN usuarios as u on u.id = c.ID_DUEÑO WHERE U.ID  = " + User.IDUsuario );
                 Datos.EjecutarLector();
 
                 if (Datos.Lector.Read())
@@ -179,11 +179,9 @@ namespace Negocio
                     Lista.Add(Aux);
                 }
                 return Aux;
-
             }
             catch (Exception Ex)
             {
-
                 throw Ex;
             }
 

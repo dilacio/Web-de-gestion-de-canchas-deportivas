@@ -10,7 +10,7 @@
 namespace TP4_Dilacio {
     
     
-    public partial class ComercianteVerReservas {
+    public partial class ComercianteVerCancelaciones {
         
         /// <summary>
         /// titulo control.
@@ -22,22 +22,13 @@ namespace TP4_Dilacio {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl titulo;
         
         /// <summary>
-        /// txbActividad control.
+        /// gvReservasCanceladas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbActividad;
-        
-        /// <summary>
-        /// gvReservasHechas control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvReservasHechas;
+        protected global::System.Web.UI.WebControls.GridView gvReservasCanceladas;
         
         /// <summary>
         /// Div1 control.
@@ -49,21 +40,48 @@ namespace TP4_Dilacio {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div1;
         
         /// <summary>
-        /// TextBox1 control.
+        /// gvDesbloqueados control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.ListBox gvDesbloqueados;
         
         /// <summary>
-        /// gvReservasAsistidas control.
+        /// btnBloquear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvReservasAsistidas;
+        protected global::System.Web.UI.WebControls.Button btnBloquear;
+        
+        /// <summary>
+        /// Div2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div2;
+        
+        /// <summary>
+        /// gvBloqueados control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox gvBloqueados;
+        
+        /// <summary>
+        /// btnDesBloquear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDesBloquear;
     }
 }
