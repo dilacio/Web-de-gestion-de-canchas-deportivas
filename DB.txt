@@ -261,6 +261,12 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 
 GO
+CREATE TABLE [dbo].[UsuariosBloqueados](
+	[ID_Usuario] [int] NOT NULL,
+	[ID_Centro] [int] NOT NULL,
+	[Baja] [int] NOT NULL
+) ON [PRIMARY]
+GO
 INSERT INTO Actividades VALUES ('Tenis'),('Futbol'),('Padel');
 GO
 INSERT INTO BARRIOS VALUES ('General Pacheco',1),('El Talar',2),('Ricardo Rojas',2),('Los Troncos del Talar',1);
@@ -274,3 +280,4 @@ GO
 insert into Estado_Reserva VALUES ('RESERVADA'),('CANCELADA');
 GO
 INSERT INTO ROLES values ('Jugador'),('Comerciante');
+
